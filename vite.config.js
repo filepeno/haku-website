@@ -6,7 +6,8 @@ module.exports = {
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        sub: resolve(__dirname, "subpages/search-interface.html"),
+        sub1: resolve(__dirname, "subpages/search-interface.html"),
+        sub2: resolve(__dirname, "subpages/sign-up.html"),
       },
     },
   },
