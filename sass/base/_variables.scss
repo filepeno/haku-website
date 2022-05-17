@@ -68,3 +68,10 @@ $gutter-xxl: 100px;
   justify-content: center;
   align-items: center;
 }
+
+@mixin bg-center-cover {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
