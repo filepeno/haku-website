@@ -52,8 +52,15 @@ $fw-medium: 500;
 $fw-regular: 400;
 $fw-light: 300;
 
-/* Mixins */
+/* Gutters */
+$gutter-xs: 5px;
+$gutter-sm: 10px;
+$gutter-md: 20px;
+$gutter-lg: 40px;
+$gutter-xl: 60px;
+$gutter-xxl: 100px;
 
+/* Mixins */
 @mixin flex-center {
   display: flex;
   justify-content: center;
