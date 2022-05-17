@@ -26,23 +26,48 @@ button {
   @include flex-center;
   overflow: hidden;
   cursor: pointer;
-  /*background-color: $clr-blue;
-  */
+  background-color: $clr-blue;
   color: $clr-white;
   font-family: $ff-main;
   font-size: $fs-heading-xs;
   font-weight: $fw-medium;
-  padding: 2px 1rem 0 1rem;
+  padding: 1.2rem 2rem;
   height: 2rem;
-  /*css.glass*/
-  background-color: $clr-blue;
+  /*   box-shadow: 0 5px 6px rgb(171 171 171); */
+  /* From https://css.glass */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.1px);
-  -webkit-backdrop-filter: blur(5.1px);
-  border: 1px solid rgba(18, 86, 109, 0.93);
+  backdrop-filter: blur(14.1px);
+  -webkit-backdrop-filter: blur(14.1px);
+  border: 1px solid rgba(18, 86, 109, 0.31);
+
+  &.glass {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.886), transparent);
+      transition: 0.3s;
+      transition-delay: 0.2s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+    }
+    &:hover:after {
+      left: 100%;
+    }
+  }
 
   &:hover {
     background-color: $clr-blue-lt;
+    /*     transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px); */
   }
 
   &[disabled] {
