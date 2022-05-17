@@ -24,30 +24,38 @@ $mq-xl: 1440px;
 $mq-xxl: 1920px;
 
 /* Colors */
-$color-blue: #12566d;
-$color-blue-lt: #539eb7;
-$color-blue-ltr: #dae7eb;
-$color-green: #b5cece;
-$color-light-bg: #f4f8f8;
+$clr-blue: #12566d;
+$clr-blue-lt: #539eb7;
+$clr-blue-ltr: #dae7eb;
+$clr-green: #b5cece;
+$clr-light-bg: #f4f8f8;
 
-$color-white: #fff;
-$color-black: #000;
+$clr-white: #fff;
+$clr-black: #000;
 
-$color-contrast-dk: #261ba8;
-$color-contrast-lt: #6156e1;
-$color-contrast-ltr: #d3c8ff;
+$clr-contrast-dk: #261ba8;
+$clr-contrast-lt: #6156e1;
+$clr-contrast-ltr: #d3c8ff;
 
 /* Fonts */
-$font-heading-primary: "Montserrat", sans-serif;
-$font-heading-secondary: "Quicksand", sans-serif;
-$font-main: "Mulish", sans-serif;
+$ff-heading-primary: "Montserrat", sans-serif;
+$ff-heading-secondary: "Quicksand", sans-serif;
+$ff-main: "Mulish", sans-serif;
 
-$font-size-body: 1rem;
-$font-size-heading-xl: 2.5rem;
-$font-size-heading-lg: 1.875rem;
-$font-size-heading-md: 1.125rem;
+$fs-body: 1rem;
+$fs-heading-xl: 2.5rem;
+$fs-heading-lg: 1.875rem;
+$fs-heading-md: 1.125rem;
 
-$font-bold: 700;
-$font-medium: 500;
-$font-regular: 400;
-$font-light: 300;
+$fw-bold: 700;
+$fw-medium: 500;
+$fw-regular: 400;
+$fw-light: 300;
+
+/* Mixins */
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

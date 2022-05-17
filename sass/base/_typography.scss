@@ -10,31 +10,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,200;1,400;1,500;1,600&display=swap");
 
 h1 {
-  font-family: $font-heading-primary;
-  font-weight: $font-bold;
-  color: $color-black;
-  font-size: $font-size-heading-xl;
+  font-family: $ff-heading-primary;
+  font-weight: $fw-bold;
+  color: $clr-black;
+  font-size: $fs-heading-xl;
+  text-align: center;
 }
 
 h2,
 h3 {
-  font-family: $font-heading-secondary;
-  font-weight: $font-medium;
-  color: $color-black;
-  font-size: $font-size-heading-lg;
+  font-family: $ff-heading-secondary;
+  font-weight: $fw-medium;
+  color: $clr-black;
+  font-size: $fs-heading-lg;
 }
 
 p {
-  font-family: $font-main;
-  font-weight: $font-light;
-  color: $color-black;
-  font-size: $font-size-body;
+  font-family: $ff-main;
+  font-weight: $fw-light;
+  color: $clr-black;
+  font-size: $fs-body;
 }
 
 a {
-  font-family: $font-main;
-  font-weight: $font-medium;
-  color: $color-black;
+  font-family: $ff-main;
+  font-weight: $fw-medium;
+  color: $clr-black;
   text-underline-offset: 4px;
   text-decoration: none;
 }
