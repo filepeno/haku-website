@@ -1,0 +1,45 @@
+@import "../base/variables";
+
+button {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button {
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+  @include flex-center;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: $clr-blue;
+  color: $clr-white;
+  font-family: $ff-main;
+  font-size: $fs-heading-md;
+  font-weight: $fw-medium;
+  padding: 2px 1rem 0 1rem;
+  height: 2rem;
+
+  &:hover {
+    background-color: $clr-blue-lt;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

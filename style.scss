@@ -3,4 +3,8 @@
 @use "sass/base/typography";
 @use "sass/base/variables";
 
+@use "sass/components/buttons";
+
 @use "sass/layout/header";
+@use "sass/layout/body";
+@use "sass/layout/hero";

@@ -1,0 +1,10 @@
+@import "../base/variables";
+
+.expandable-nav {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $mq-sm) {
+    flex-direction: row;
+  }
+}

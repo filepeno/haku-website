@@ -1,0 +1,11 @@
+@import "../base/variables";
+
+.hero {
+  @include flex-center;
+}
+
+.hero-content {
+  @include flex-center;
+  flex-direction: column;
+  max-width: 700px;
+}
