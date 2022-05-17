@@ -12,14 +12,16 @@ h1 {
   font-weight: 700;
   font-style: normal;
   color: var(--color-black);
+  font-size: var(--font-size-heading-xl);
 }
 
 h2,
 h3 {
   font-family: var(--font-heading-secondary);
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   color: var(--color-black);
+  font-size: var(--font-size-heading-lg);
 }
 
 p {
@@ -27,6 +29,7 @@ p {
   font-weight: 300;
   font-style: normal;
   color: var(--color-black);
+  font-size: var(--font-size-body);
 }
 
 a {
