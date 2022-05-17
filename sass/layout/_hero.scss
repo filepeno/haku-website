@@ -19,6 +19,14 @@
   }
 
   p {
-    font-size: $fs-heading-md;
+    display: none;
+    text-align: center;
+    font-size: $fs-heading-xs;
+    @media (min-width: $mq-xs) {
+      display: block;
+    }
+    @media (min-width: $mq-sm) {
+      font-size: $fs-heading-sm;
+    }
   }
 }
