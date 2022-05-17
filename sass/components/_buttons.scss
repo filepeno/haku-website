@@ -26,13 +26,20 @@ button {
   @include flex-center;
   overflow: hidden;
   cursor: pointer;
-  background-color: $clr-blue;
+  /*background-color: $clr-blue;
+  */
   color: $clr-white;
   font-family: $ff-main;
-  font-size: $fs-heading-md;
+  font-size: $fs-heading-xs;
   font-weight: $fw-medium;
   padding: 2px 1rem 0 1rem;
   height: 2rem;
+  /*css.glass*/
+  background-color: $clr-blue;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(18, 86, 109, 0.93);
 
   &:hover {
     background-color: $clr-blue-lt;
