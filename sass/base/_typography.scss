@@ -13,8 +13,11 @@ h1 {
   font-family: $ff-heading-primary;
   font-weight: $fw-bold;
   color: $clr-black;
-  font-size: $fs-heading-xl;
+  font-size: $fs-heading-lg;
   text-align: center;
+  @media (min-width: $mq-sm) {
+    font-size: $fs-heading-xl;
+  }
 }
 
 h2,
