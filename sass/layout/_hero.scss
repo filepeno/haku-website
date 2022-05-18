@@ -3,8 +3,6 @@
 .hero {
   @include flex-center;
   @include bg-center-cover;
-  background-color: $clr-blue;
-  background-image: url("/assets/img/glass-wall_crop_2100x1234.png");
   height: 80vh;
   padding-right: $gutter-xl;
   padding-left: $gutter-xl;
@@ -12,6 +10,7 @@
 
 .hero-content {
   @include flex-center;
+  gap: $gutter-md;
   flex-direction: column;
 
   @media (min-width: $mq-sm) {
