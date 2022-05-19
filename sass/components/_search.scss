@@ -1,0 +1,14 @@
+@import "../base/variables";
+@import "../base/typography";
+
+.search {
+  @include flex-center;
+  flex-direction: column;
+  > span:first-child {
+    @include main-typography;
+  }
+
+  [data-site] {
+    @include h2-typography;
+  }
+}

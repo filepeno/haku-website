@@ -1,0 +1,9 @@
+@import "../base/variables";
+@import "../base/typography";
+
+.switch {
+  @include flex-center;
+  @include main-typography;
+  width: 100%;
+  flex-direction: column;
+}
