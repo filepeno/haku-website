@@ -1,0 +1,17 @@
+@import "../base/variables";
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $mq-sm) {
+    flex-direction: row;
+    > * {
+      width: 50%;
+    }
+
+    .form-wrapper {
+      margin: 0 $gutter-xl;
+    }
+  }
+}
