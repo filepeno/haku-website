@@ -1,5 +1,9 @@
 @import "../base/variables";
 
+body {
+  background-color: $clr-light-bg;
+}
+
 .main-content {
   margin: $gutter-xl;
 }

@@ -1,2 +1,25 @@
 @import "../base/variables";
 @import "../base/typography";
+
+.search-interface-page {
+  .hero {
+    background-image: url("/assets/img/water_crop_2100x822.png");
+    height: 60vh;
+
+    .hero-content {
+      padding: $gutter-lg $gutter-xl;
+
+      backdrop-filter: blur(1px) saturate(165%);
+      -webkit-backdrop-filter: blur(21px) saturate(200%);
+      background-color: rgba(20, 58, 87, 0.56);
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+
+      > *,
+      label span {
+        color: $clr-white;
+      }
+    }
+  }
+}
