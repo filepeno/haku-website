@@ -1,11 +1,9 @@
 @import "../base/variables";
 
 .form-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 }
 
 .input-wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 }
