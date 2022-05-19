@@ -23,7 +23,8 @@
   font-size: $fs-body;
 }
 
-h1 {
+h1,
+.title {
   font-family: $ff-heading-primary;
   font-weight: $fw-bold;
   color: $clr-black;
@@ -34,8 +35,14 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.subtitle {
   @include h2-typography;
+}
+
+h3 {
+  @include h2-typography;
+  font-size: $fs-heading-md;
 }
 
 p {
@@ -59,4 +66,8 @@ ol {
 
 strong {
   font-weight: $fw-bold;
+}
+
+time {
+  @include main-typography;
 }
