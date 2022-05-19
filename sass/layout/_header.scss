@@ -1,9 +1,13 @@
 @import "../base/variables";
 
+header {
+  padding: $gutter-sm $gutter-md;
+}
+
 .top-nav ul {
   @include flex-center;
   gap: $gutter-lg;
-  margin: $gutter-sm $gutter-md;
+  margin: 0 $gutter-md;
 
   @media (min-width: $mq-sm) {
     li {
@@ -19,8 +23,10 @@
   @include flex-center;
   flex-direction: column;
   width: 100%;
+  display: none;
 
   @media (min-width: $mq-sm) {
+    display: flex;
     flex-direction: row;
     gap: $gutter-lg;
 
