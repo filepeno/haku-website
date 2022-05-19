@@ -4,6 +4,7 @@
 .switch {
   @include flex-center;
   @include main-typography;
+  color: $clr-white;
   width: 100%;
   flex-direction: column;
 }

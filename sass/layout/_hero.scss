@@ -10,14 +10,13 @@
 
 .hero-content {
   @include flex-center;
-  gap: $gutter-md;
   flex-direction: column;
-
+  gap: $gutter-sm;
   @media (min-width: $mq-sm) {
     max-width: 600px;
   }
 
-  p {
+  .subtitle {
     display: none;
     text-align: center;
     font-size: $fs-heading-xs;

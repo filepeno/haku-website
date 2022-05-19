@@ -7,6 +7,7 @@
   > span:first-child {
     @include main-typography;
   }
+  margin-top: $gutter-md;
 
   [data-site] {
     @include h2-typography;
@@ -25,4 +26,10 @@
       box-shadow: 0 4px 4px #654cff;
     }
   }
+}
+
+.result-feedback {
+  visibility: hidden;
+  margin-top: $gutter-sm;
+  font-size: $fs-sm;
 }

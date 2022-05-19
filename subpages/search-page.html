@@ -16,7 +16,7 @@
                 <li><a href="/index.html">Home link</a></li>
                 <div class="expandable-nav">
                     <li><a href="">Features</a></li>
-                    <li><a href="/subpages/search-interface.html">Try Haku</a></li>
+                    <li><a href="/subpages/search-page.html">Try Haku</a></li>
                     <li><a href="">Pricing</a></li>
                     <li><a href="">About us</a></li>
                     <li><a class="glass button" href="/subpages/sign-up.html">Sign-up for trial</a></li>
@@ -28,18 +28,21 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Try Haku</h1>
-                <label class="switch">
-                    Switch to your site
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-                <label class="search-input">
-                    <span>Searching on</span>
-                    <span data-site="">knowit.eu</span>
-                    <span class="icon"></span>
-                    <input type="search" placeholder="Search for">
-                </label>
+                <h1 class="title">Try Haku</h1>
+                <form class="search-interface" action="" autocomplete="off">
+                    <label class="switch">
+                        Switch to your site
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <label class="search-input">
+                        <span>Searching on</span>
+                        <span data-site="">knowit.eu</span>
+                        <span class="icon"></span>
+                        <input type="search" id="search-input" placeholder="Search for">
+                    </label>
+                </form>
+                <p class="result-feedback">Your search returned 10 results.</p>
             </div>
         </section>
         <section class="results">
@@ -47,6 +50,7 @@
         </section>
     </main>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/search-interface.js"></script>
 </body>
 
 </html>
