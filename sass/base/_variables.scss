@@ -83,3 +83,11 @@ $gutter-xxl: 100px;
   background-position: center center;
   background-size: cover;
 }
+
+@mixin box-shadow-transition {
+  transition: box-shadow 0.15s ease-in-out;
+  -webkit-transition: box-shadow 0.15s ease-in-out;
+  -moz-transition: box-shadow 0.15s ease-in-out;
+  -ms-transition: box-shadow 0.15s ease-in-out;
+  -o-transition: box-shadow 0.15s ease-in-out;
+}

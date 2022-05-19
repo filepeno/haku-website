@@ -1,7 +1,7 @@
 @import "../base/variables";
 @import "../base/typography";
 
-.search {
+.search-input {
   @include flex-center;
   flex-direction: column;
   > span:first-child {
@@ -10,5 +10,19 @@
 
   [data-site] {
     @include h2-typography;
+  }
+
+  input {
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    background-color: $clr-light-bg;
+    @include box-shadow-transition;
+
+    &:focus {
+      box-shadow: 0 4px 4px #654cff;
+    }
   }
 }
