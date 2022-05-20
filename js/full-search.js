@@ -60,11 +60,14 @@ function appendResult(hit) {
   } else {
     title.innerHTML = hit._source.title;
   }
+  if (hit.highlight.body) {
+    excerpt1.innerHTML = hit.highlight.body[0];
 
-  excerpt1.innerHTML = hit.highlight.body[0];
-
-  if (hit.highlight.body[1]) {
-    excerpt2.innerHTML = hit.highlight.body[1] + "...";
+    if (hit.highlight.body[1]) {
+      excerpt2.innerHTML = hit.highlight.body[1] + "...";
+    }
+  } else if (hit.highlight.description) {
+    excerpt1.innerHTML = hit.highlight.description[0];
   }
 
   parent.appendChild(clone);
