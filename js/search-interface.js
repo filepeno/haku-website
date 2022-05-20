@@ -22,16 +22,19 @@ function trackReturn(input) {
 function handleRequest(q) {
   if (q) {
     findAll(q);
-  } else {
-    displayNegativeResultFeedback();
-    clearResults();
   }
+  clearResults();
+  displayResultFeedback(q);
 }
 
-export function displayNegativeResultFeedback() {
+export function displayResultFeedback(hits) {
   const el = document.querySelector(".result-feedback");
+  if (hits > 0) {
+    el.querySelector(".hits").textContent = hits;
+  } else {
+    el.querySelector(".hits").textContent = "0";
+  }
   el.classList.remove("hidden");
-  el.textContent = "Your search returned 0 results.";
 }
 
 export function clearResults() {

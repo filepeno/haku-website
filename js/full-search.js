@@ -1,4 +1,4 @@
-import { displayNegativeResultFeedback, clearResults } from "./search-interface";
+import { displayResultFeedback } from "./search-interface";
 
 export default function findAll(q) {
   //from Postman
@@ -34,16 +34,11 @@ function cleanResults(result) {
   const content = hits.hits;
   if (content.length > 0) {
     displayResults(content);
-  } else {
-    displayNegativeResultFeedback();
-    clearResults();
   }
+  displayResultFeedback(hits.total.value);
 }
 
 function displayResults(hits) {
-  //clear parent content
-
-  clearResults();
   hits.forEach((hit) => {
     appendResult(hit);
   });
