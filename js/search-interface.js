@@ -1,3 +1,5 @@
+import findAll from "./full-search";
+
 trackInput();
 
 function trackInput() {
@@ -6,6 +8,7 @@ function trackInput() {
     //check if return key
     if (e.keyCode === 13) {
       e.preventDefault();
+      findAll(input.value);
       blurInput(input);
       console.log("submit");
     }
