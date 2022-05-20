@@ -8,7 +8,7 @@ export default function findAll(q) {
     params: {
       include_facets: true,
       query_string: q,
-      size: 10,
+      size: 5,
       offset: 0,
     },
   });
@@ -45,8 +45,24 @@ function displayResults(hits) {
 function appendResult(hit, parent) {
   const template = document.querySelector("#result-template").content;
   const clone = template.cloneNode(true);
-  clone.querySelector(".date").textContent = hit.highlight.date_published;
-  clone.querySelector(".result-title").textContent = hit.highlight.title;
-  clone.querySelector(".excerpt").textContent = hit.highlight.body;
+  const date = clone.querySelector(".date");
+  const title = clone.querySelector(".result-title");
+  const excerpt1 = clone.querySelector(".excerpt-1");
+  const excerpt2 = clone.querySelector(".excerpt-2");
+
+  date.textContent = hit._source.date_published;
+
+  if (hit.highlight.title) {
+    title.innerHTML = hit.highlight.title;
+  } else {
+    title.innerHTML = hit._source.title;
+  }
+
+  excerpt1.innerHTML = hit.highlight.body[0];
+
+  if (hit.highlight.body[1]) {
+    excerpt2.innerHTML = hit.highlight.body[1] + "...";
+  }
+
   parent.appendChild(clone);
 }

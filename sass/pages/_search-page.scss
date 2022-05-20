@@ -4,7 +4,7 @@
 .search-interface-page {
   .hero {
     background-image: url("/assets/img/water_crop_2100x822.png");
-    height: 70vh;
+    height: 55vh;
   }
 
   .hero-content {
@@ -35,14 +35,17 @@
   }
 }
 
-.results {
+.results-wrapper {
   max-width: 700px;
   margin: 0 auto;
 }
 
 .result {
-  margin-top: $gutter-md;
+  margin-top: $gutter-lg;
   .date {
     font-size: $fs-sm;
+  }
+  p {
+    margin-top: $gutter-xs;
   }
 }
