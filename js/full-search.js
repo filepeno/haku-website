@@ -1,3 +1,5 @@
+import { displayNegativeResultFeedback, clearResults } from "./search-interface";
+
 export default function findAll(q) {
   //from Postman
   var myHeaders = new Headers();
@@ -29,20 +31,26 @@ export default function findAll(q) {
 function cleanResults(result) {
   const hits = result.hits;
   console.log(hits);
-  displayResults(hits);
+  const content = hits.hits;
+  if (content.length > 0) {
+    displayResults(content);
+  } else {
+    displayNegativeResultFeedback();
+    clearResults();
+  }
 }
 
 function displayResults(hits) {
-  const contentToAppend = hits.hits;
   //clear parent content
-  const parent = document.querySelector(".results-area");
-  parent.innerHTML = "";
-  contentToAppend.forEach((hit) => {
-    appendResult(hit, parent);
+
+  clearResults();
+  hits.forEach((hit) => {
+    appendResult(hit);
   });
 }
 
-function appendResult(hit, parent) {
+function appendResult(hit) {
+  const parent = document.querySelector(".results-area");
   const template = document.querySelector("#result-template").content;
   const clone = template.cloneNode(true);
   const date = clone.querySelector(".date");

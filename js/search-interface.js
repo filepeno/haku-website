@@ -24,13 +24,19 @@ function handleRequest(q) {
     findAll(q);
   } else {
     displayNegativeResultFeedback();
+    clearResults();
   }
 }
 
-function displayNegativeResultFeedback() {
+export function displayNegativeResultFeedback() {
   const el = document.querySelector(".result-feedback");
   el.classList.remove("hidden");
   el.textContent = "Your search returned 0 results.";
+}
+
+export function clearResults() {
+  const parent = document.querySelector(".results-area");
+  parent.innerHTML = "";
 }
 
 function blurInput(input) {
