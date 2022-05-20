@@ -1,19 +1,23 @@
 import findAll from "./full-search";
 
-trackInput();
+let q;
+let i = 1;
 
-function trackInput() {
-  const input = document.querySelector("#search-input");
-  trackReturn(input);
+trackInteraction();
+
+function trackInteraction() {
+  trackReturn();
+  trackNextButton();
 }
 
-function trackReturn(input) {
+function trackReturn() {
+  const input = document.querySelector("#search-input");
   input.onkeydown = (e) => {
+    q = input.value;
     //check if return key
     if (e.keyCode === 13) {
       e.preventDefault();
-      handleRequest(input.value);
-
+      handleRequest(q);
       blurInput(input);
     }
   };
@@ -21,10 +25,11 @@ function trackReturn(input) {
 
 function handleRequest(q) {
   if (q) {
-    findAll(q);
+    findAll(q, 0);
+  } else {
+    displayResultFeedback(q);
   }
   clearResults();
-  displayResultFeedback(q);
 }
 
 export function displayResultFeedback(hits) {
@@ -44,4 +49,15 @@ export function clearResults() {
 
 function blurInput(input) {
   input.blur();
+}
+
+function trackNextButton() {
+  const nextPageBtn = document.querySelector(".next-page-btn");
+  nextPageBtn.addEventListener("click", nextPage);
+}
+
+function nextPage() {
+  clearResults();
+  findAll(q, i);
+  i++;
 }

@@ -1,7 +1,10 @@
 import { displayResultFeedback } from "./search-interface";
 
-export default function findAll(q) {
-  //from Postman
+export default function findAll(q, i) {
+  console.log("query:", q, " & iteration:", i);
+  const size = 5;
+  const calculatedOffset = calculateOffset(size, i);
+  console.log(calculatedOffset);
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -10,8 +13,9 @@ export default function findAll(q) {
     params: {
       include_facets: true,
       query_string: q,
-      size: 5,
-      offset: 0,
+      size: size,
+      from: calculatedOffset,
+      //offset: 0
     },
   });
 
@@ -26,6 +30,10 @@ export default function findAll(q) {
     .then((response) => response.json())
     .then((result) => cleanResults(result));
   /*     .catch((error) => console.log("error", error)); */
+}
+
+function calculateOffset(size, i) {
+  return size * i;
 }
 
 function cleanResults(result) {
@@ -43,6 +51,8 @@ function displayResults(hits) {
     appendResult(hit);
   });
 }
+
+function displayScope() {}
 
 function appendResult(hit) {
   const parent = document.querySelector(".results-area");
