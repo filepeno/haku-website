@@ -21,10 +21,6 @@ textarea {
     color: $clr-black;
     opacity: 0.75;
   }
-  &::selection {
-    color: var(--color-white);
-    background: var(--color-gray-dark);
-  }
 
   &:focus {
     background-color: $clr-white;

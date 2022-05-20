@@ -39,30 +39,35 @@
                         <span>Searching on</span>
                         <span data-site="">knowit.eu</span>
                         <span class="icon"></span>
-                        <input type="search" id="search-input" placeholder="Search for">
+                        <input type="search" id="search-input" placeholder="Search for" onfocus="this.value=''">
                     </label>
                 </form>
-                <p class="result-feedback">Your search returned 10 results.</p>
+                <p class="result-feedback hidden">Your search returned <span class="hits">1</span> results.</p>
             </div>
         </section>
         <section class="main-content">
             <h2 class="subtitle">Search results</h2>
-            <div class="results">
-                <p>Your search returned <span class="hits">1</span> result(s).</p>
-
-                <article class="result">
-                    <time class="date">12.3.2022</time>
-                    <h3 class="result-title">Our sustainability efforts</h3>
-                    <p class="excerpt">Our search algorithm finds results based on content - this means that it takes in
-                        consideration
-                        eg.
-                        linguistic factors such as grammar, actuality, content type, and how “deep” it lies on the
-                        website.</p>
-                </article>
+            <div class="results-wrapper">
+                <p class="result-scope">Showing <span>X</span> - <span>Y</span> results</p>
+                <div class="results-area"></div>
             </div>
 
         </section>
     </main>
+
+    <template id="result-template">
+        <article class="result">
+            <time class="date">12.3.2022</time>
+            <h3 class="result-title">Our sustainability efforts</h3>
+            <p class="excerpt">Our search algorithm finds results based on content - this means that it
+                takes in
+                consideration
+                eg.
+                linguistic factors such as grammar, actuality, content type, and how “deep” it lies on the
+                website.</p>
+        </article>
+    </template>
+
     <script type="module" src="/main.js"></script>
     <script type="module" src="/js/search-interface.js"></script>
 </body>
