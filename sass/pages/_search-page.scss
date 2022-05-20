@@ -28,15 +28,21 @@
   }
 }
 
-.results {
+.main-content {
   .subtitle {
     text-align: center;
     margin-bottom: $gutter-lg;
   }
 }
 
-.result {
+.results {
   max-width: 700px;
   margin: 0 auto;
-  margin-bottom: $gutter-lg;
+}
+
+.result {
+  margin-top: $gutter-md;
+  .date {
+    font-size: $fs-sm;
+  }
 }
