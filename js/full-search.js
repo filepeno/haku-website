@@ -1,10 +1,16 @@
-import { displayResultFeedback } from "./search-interface";
+import { displayResultFeedback, displayScope } from "./search-interface";
 
-export default function findAll(q, i) {
-  console.log("query:", q, " & iteration:", i);
-  const size = 5;
-  const calculatedOffset = calculateOffset(size, i);
-  console.log(calculatedOffset);
+let q;
+let i;
+const size = 5;
+let totalHits;
+let offset;
+
+export default function findAll(query, iteration) {
+  console.log("query:", query, " & iteration:", iteration);
+  q = query;
+  i = iteration;
+  offset = calculateOffset(size, i);
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -14,7 +20,7 @@ export default function findAll(q, i) {
       include_facets: true,
       query_string: q,
       size: size,
-      from: calculatedOffset,
+      from: offset,
       //offset: 0
     },
   });
@@ -36,14 +42,28 @@ function calculateOffset(size, i) {
   return size * i;
 }
 
+function calculateScope() {
+  const from = offset + 1;
+  let to;
+  if (totalHits < offset + size) {
+    to = totalHits;
+  } else {
+    to = offset + size;
+  }
+  displayScope(from, to);
+}
+
 function cleanResults(result) {
   const hits = result.hits;
   console.log(hits);
   const content = hits.hits;
+  totalHits = hits.total.value;
   if (content.length > 0) {
     displayResults(content);
   }
-  displayResultFeedback(hits.total.value);
+  displayResultFeedback(totalHits);
+
+  calculateScope(offset, size);
 }
 
 function displayResults(hits) {
@@ -51,8 +71,6 @@ function displayResults(hits) {
     appendResult(hit);
   });
 }
-
-function displayScope() {}
 
 function appendResult(hit) {
   const parent = document.querySelector(".results-area");

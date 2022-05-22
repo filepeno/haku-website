@@ -61,3 +61,8 @@ function nextPage() {
   findAll(q, i);
   i++;
 }
+
+export function displayScope(fromValue, toValue) {
+  document.querySelector("[data-from]").textContent = fromValue;
+  document.querySelector("[data-to]").textContent = toValue;
+}
