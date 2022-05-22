@@ -36,8 +36,8 @@
 }
 
 .results-wrapper {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: $max-size;
+  @include center;
 }
 
 .result {
@@ -54,8 +54,14 @@
   font-size: $fs-sm;
 }
 
-.paging {
+.scope-controls {
   margin-top: $gutter-lg;
+  @include flex-center;
+  gap: $gutter-md;
+  /*   max-width: $max-size-half; */
+}
+
+.paging {
   @include flex-center;
   gap: $gutter-xs;
 }

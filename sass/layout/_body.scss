@@ -5,5 +5,8 @@ body {
 }
 
 .main-content {
-  margin: $gutter-md $gutter-xl;
+  margin: $gutter-sm $gutter-md;
+  @media (min-width: $mq-sm) {
+    margin: $gutter-md $gutter-xl;
+  }
 }

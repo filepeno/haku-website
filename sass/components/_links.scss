@@ -12,6 +12,7 @@ header a {
   @include link-typography;
   color: $clr-contrast-dk;
   font-weight: $fw-regular;
+  white-space: normal;
 
   &:hover {
     text-decoration: underline;

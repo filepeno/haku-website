@@ -66,10 +66,20 @@ $gutter-lg: 40px;
 $gutter-xl: 60px;
 $gutter-xxl: 100px;
 
+//width/height
+$max-size: 700px;
+$max-size-half: calc($max-size/2);
+
 /* Mixins */
 @mixin flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -91,6 +101,10 @@ $gutter-xxl: 100px;
   -moz-transition: box-shadow 0.15s ease-in-out;
   -ms-transition: box-shadow 0.15s ease-in-out;
   -o-transition: box-shadow 0.15s ease-in-out;
+}
+
+@mixin center {
+  margin: 0 auto;
 }
 
 .hidden {
