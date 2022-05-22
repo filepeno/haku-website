@@ -59,9 +59,18 @@
   @include flex-center;
   gap: $gutter-md;
   /*   max-width: $max-size-half; */
+  flex-wrap: wrap;
+  .text-link {
+    color: $clr-black;
+  }
 }
 
 .paging {
   @include flex-center;
   gap: $gutter-xs;
+}
+
+.current-page {
+  font-weight: $fw-bold;
+  /*   color: $clr-contrast-dk; */
 }

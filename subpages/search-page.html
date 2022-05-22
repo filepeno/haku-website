@@ -51,17 +51,20 @@
             <div class="results-wrapper">
                 <p class="result-scope">Showing <span data-from>1</span> - <span data-to>5</span> results:
                 </p>
-                <div class="results-area"></div>
+                <div class="results-area">
+                    <!-- results go here -->
+                </div>
                 <div class="scope-controls">
-                    <button class="text-link" data-scope="">Previous</button>
+                    <button class="text-link prev" data-scope="">Previous</button>
                     <div class="paging">
-                        <button class="page-btn" data-scope="">1</button>
+                        <!-- pages go here -->
+                        <button class="page-btn current-page" data-scope="">1</button>
                         <button class="page-btn" data-scope="">2</button>
                         <button class="page-btn" data-scope="">3</button>
                         <button class="page-btn" data-scope="">4</button>
                         <button class="page-btn" data-scope="">5</button>
                     </div>
-                    <button class="text-link" data-scope="">Next</button>
+                    <button class="text-link next" data-scope="">Next</button>
                 </div>
 
             </div>
@@ -78,6 +81,10 @@
                     takes in consideration</span>... <span class="excerpt-2"></span>
             </p>
         </article>
+    </template>
+
+    <template id="page-template">
+        <button class="page-btn" data-scope="">1</button>
     </template>
 
     <script type="module" src="/main.js"></script>

@@ -1,18 +1,23 @@
-import { displayResultFeedback, displayScope } from "./search-interface";
+import { displayResultFeedback, displayScope, HTML } from "./search-interface";
 
 //make not-global
 let q;
-let i;
+let currentScope;
 const size = 5;
+const maxPages = 5;
 let totalHits;
 let offset;
 //
 
-export default function findAll(query, iteration) {
-  console.log("query:", query, " & iteration:", iteration);
+export default function findAll(query, scope) {
   q = query;
-  i = iteration;
-  offset = calculateOffset(size, i);
+  /*   i = iteration; */
+  currentScope = scope;
+  console.log("query:", q, " & scope:", currentScope);
+  offset = calculateOffset();
+  console.log("current scope: ", currentScope);
+  setScopeData();
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -40,8 +45,8 @@ export default function findAll(query, iteration) {
   /*     .catch((error) => console.log("error", error)); */
 }
 
-function calculateOffset(size, i) {
-  return size * i;
+function calculateOffset() {
+  return size * currentScope - size;
 }
 
 function calculateScope() {
@@ -55,6 +60,10 @@ function calculateScope() {
   displayScope(from, to);
 }
 
+function calculatePages(hits) {
+  return Math.ceil(totalHits / maxPages);
+}
+
 function cleanResults(result) {
   const hits = result.hits;
   console.log(hits);
@@ -65,6 +74,7 @@ function cleanResults(result) {
   }
   displayResultFeedback(totalHits);
 
+  appendPages(calculatePages(totalHits));
   calculateScope(offset, size);
 }
 
@@ -101,4 +111,25 @@ function appendResult(hit) {
   }
 
   parent.appendChild(clone);
+}
+
+function appendPages(x) {
+  const parent = document.querySelector(".paging");
+  const template = document.querySelector("#page-template").content;
+  parent.innerHTML = "";
+  for (let i = 1; i <= x; i++) {
+    const clone = template.cloneNode(true);
+    clone.querySelector("button").dataset.scope = i;
+    clone.querySelector("button").textContent = i;
+    parent.appendChild(clone);
+  }
+  parent.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
+}
+
+//set next and previous scope to next and previous buttons
+function setScopeData() {
+  HTML.prevBtn.dataset.scope = currentScope - 1;
+  HTML.nextBtn.dataset.scope = currentScope + 1;
+  if (currentScope > maxPages) {
+  }
 }

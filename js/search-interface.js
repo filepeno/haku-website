@@ -5,11 +5,21 @@ let q;
 let i = 1;
 //
 
+export const HTML = {};
+
+init();
+
+function init() {
+  HTML.prevBtn = document.querySelector(".prev");
+  HTML.nextBtn = document.querySelector(".next");
+  HTML.scopeControls = document.querySelectorAll("[data-scope]");
+}
+
 trackInteraction();
 
 function trackInteraction() {
   trackReturn();
-  trackNextButton();
+  trackScopeControls();
 }
 
 function trackReturn() {
@@ -27,7 +37,7 @@ function trackReturn() {
 
 function handleRequest(q) {
   if (q) {
-    findAll(q, 0);
+    findAll(q, 1);
   } else {
     displayResultFeedback(q);
   }
@@ -54,18 +64,21 @@ function blurInput(input) {
   input.blur();
 }
 
-function trackNextButton() {
-  const nextPageBtn = document.querySelector(".next-page-btn");
-  nextPageBtn.addEventListener("click", nextPage);
+function trackScopeControls() {
+  HTML.scopeControls.forEach((element) => {
+    element.addEventListener("click", changePage);
+  });
 }
 
-function nextPage() {
+function changePage() {
+  console.log(this);
   clearResults();
   findAll(q, i);
-  i++;
 }
 
 export function displayScope(fromValue, toValue) {
   document.querySelector("[data-from]").textContent = fromValue;
   document.querySelector("[data-to]").textContent = toValue;
 }
+
+//highlight current scope
