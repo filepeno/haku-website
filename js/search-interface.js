@@ -1,7 +1,9 @@
 import findAll from "./full-search";
 
+//make not-global
 let q;
 let i = 1;
+//
 
 trackInteraction();
 

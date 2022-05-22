@@ -1,0 +1,21 @@
+@import "../base/variables";
+@import "../base/typography";
+
+header a {
+  @include link-typography;
+  &:hover {
+    color: $clr-blue-lt;
+  }
+}
+
+.text-link {
+  @include link-typography;
+  color: $clr-contrast-dk;
+  font-weight: $fw-regular;
+
+  &:hover {
+    text-decoration: underline;
+    color: $clr-contrast-lt;
+    text-underline-offset: 4px;
+  }
+}

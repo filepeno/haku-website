@@ -12,15 +12,20 @@
 @mixin h2-typography {
   font-family: $ff-heading-secondary;
   font-weight: $fw-medium;
-  color: $clr-black;
   font-size: $fs-heading-lg;
 }
 
 @mixin main-typography {
   font-family: $ff-main;
   font-weight: $fw-light;
-  color: $clr-black;
   font-size: $fs-body;
+}
+
+@mixin link-typography {
+  font-family: $ff-main;
+  font-weight: $fw-medium;
+  color: $clr-black;
+  text-decoration: none;
 }
 
 h1,
@@ -50,11 +55,7 @@ p {
 }
 
 a {
-  font-family: $ff-main;
-  font-weight: $fw-medium;
-  color: $clr-black;
-  text-underline-offset: 4px;
-  text-decoration: none;
+  @include link-typography;
 }
 
 ul,

@@ -49,3 +49,18 @@
     margin-top: $gutter-xs;
   }
 }
+
+.result-feedback {
+  margin-top: $gutter-sm;
+  font-size: $fs-sm;
+}
+
+.result-scope {
+  font-size: $fs-sm;
+}
+
+.paging {
+  margin-top: $gutter-lg;
+  @include flex-center;
+  gap: $gutter-xs;
+}

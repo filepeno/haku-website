@@ -42,16 +42,26 @@
                         <input type="search" id="search-input" placeholder="Search for" onfocus="this.value=''">
                     </label>
                 </form>
-                <p class="result-feedback hidden">Your search returned <span class="hits">1</span> results.</p>
+                <p class="result-feedback hidden">Your search on "<span data-query>query</span>" returned <span
+                        class="hits">1</span> results.</p>
             </div>
         </section>
         <section class="main-content">
             <h2 class="subtitle">Search results</h2>
             <div class="results-wrapper">
-                <p class="result-scope">Showing <span data-from="1">1</span> - <span data-to="5">5</span> results:
+                <p class="result-scope">Showing <span data-from>1</span> - <span data-to>5</span> results:
                 </p>
                 <div class="results-area"></div>
-                <button class="next-page-btn button">Next page</button>
+                <div class="paging">
+                    <button class="prev-page-btn text-link">Previous</button>
+                    <button class="page-btn">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="next-page-btn text-link">Next</button>
+                </div>
+
             </div>
 
 

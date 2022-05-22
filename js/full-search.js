@@ -1,10 +1,12 @@
 import { displayResultFeedback, displayScope } from "./search-interface";
 
+//make not-global
 let q;
 let i;
 const size = 5;
 let totalHits;
 let offset;
+//
 
 export default function findAll(query, iteration) {
   console.log("query:", query, " & iteration:", iteration);
