@@ -67,10 +67,4 @@
 
 .paging {
   @include flex-center;
-  gap: $gutter-xs;
-}
-
-.current-page {
-  font-weight: $fw-bold;
-  /*   color: $clr-contrast-dk; */
 }

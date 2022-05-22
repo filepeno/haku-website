@@ -13,10 +13,21 @@ header a {
   color: $clr-contrast-dk;
   font-weight: $fw-regular;
   white-space: normal;
+  text-underline-offset: 4px;
 
   &:hover {
     text-decoration: underline;
     color: $clr-contrast-lt;
-    text-underline-offset: 4px;
+  }
+  &.scope-btn {
+    padding: $gutter-xs;
+    &.current-page {
+      text-decoration: underline;
+      font-weight: $fw-bold;
+      color: $clr-blue;
+    }
+    &:hover {
+      color: $clr-blue-lt;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { displayResultFeedback, displayScope, HTML } from "./search-interface";
+import { displayResultFeedback, displayScope, HTML, trackPageControls } from "./search-interface";
 
 //make not-global
 let q;
@@ -60,7 +60,7 @@ function calculateScope() {
   displayScope(from, to);
 }
 
-function calculatePages(hits) {
+function calculatePages() {
   return Math.ceil(totalHits / maxPages);
 }
 
@@ -124,6 +124,8 @@ function appendPages(x) {
     parent.appendChild(clone);
   }
   parent.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
+  HTML.pageControls = parent.querySelectorAll("button");
+  trackPageControls();
 }
 
 //set next and previous scope to next and previous buttons

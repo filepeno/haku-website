@@ -2,7 +2,6 @@ import findAll from "./full-search";
 
 //make not-global
 let q;
-let i = 1;
 //
 
 export const HTML = {};
@@ -12,14 +11,14 @@ init();
 function init() {
   HTML.prevBtn = document.querySelector(".prev");
   HTML.nextBtn = document.querySelector(".next");
-  HTML.scopeControls = document.querySelectorAll("[data-scope]");
+  HTML.pageControls;
 }
 
 trackInteraction();
 
 function trackInteraction() {
   trackReturn();
-  trackScopeControls();
+  trackNextAndPrevBtn();
 }
 
 function trackReturn() {
@@ -64,16 +63,20 @@ function blurInput(input) {
   input.blur();
 }
 
-function trackScopeControls() {
-  HTML.scopeControls.forEach((element) => {
+function trackNextAndPrevBtn() {
+  HTML.prevBtn.addEventListener("click", changePage);
+  HTML.nextBtn.addEventListener("click", changePage);
+}
+
+export function trackPageControls() {
+  HTML.pageControls.forEach((element) => {
     element.addEventListener("click", changePage);
   });
 }
 
 function changePage() {
-  console.log(this);
   clearResults();
-  findAll(q, i);
+  findAll(q, this.dataset.scope);
 }
 
 export function displayScope(fromValue, toValue) {
