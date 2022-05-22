@@ -5,6 +5,7 @@ let q;
 let currentScope;
 const size = 5;
 const maxPages = 5;
+let totalPages;
 let totalHits;
 let offset;
 //
@@ -73,8 +74,8 @@ function cleanResults(result) {
     displayResults(content);
   }
   displayResultFeedback(totalHits);
-
-  appendPages(calculatePages(totalHits));
+  totalPages = calculatePages(totalHits);
+  appendPages();
   calculateScope(offset, size);
 }
 
@@ -113,16 +114,27 @@ function appendResult(hit) {
   parent.appendChild(clone);
 }
 
-function appendPages(x) {
+function appendPages() {
   const parent = document.querySelector(".paging");
   const template = document.querySelector("#page-template").content;
   parent.innerHTML = "";
-  for (let i = 1; i <= x; i++) {
+  if (totalPages > maxPages) {
+    for (let i = 1; i <= maxPages; i++) {
+      appendPage(i);
+    }
+  } else {
+    for (let i = 1; i <= totalPages; i++) {
+      appendPage(i);
+    }
+  }
+
+  function appendPage(i) {
     const clone = template.cloneNode(true);
     clone.querySelector("button").dataset.scope = i;
     clone.querySelector("button").textContent = i;
     parent.appendChild(clone);
   }
+
   parent.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
   HTML.pageControls = parent.querySelectorAll("button");
   trackPageControls();
@@ -132,6 +144,4 @@ function appendPages(x) {
 function setScopeData() {
   HTML.prevBtn.dataset.scope = currentScope - 1;
   HTML.nextBtn.dataset.scope = currentScope + 1;
-  if (currentScope > maxPages) {
-  }
 }
