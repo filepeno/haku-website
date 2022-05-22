@@ -36,10 +36,11 @@ function handleRequest(q) {
 
 export function displayResultFeedback(hits) {
   const el = document.querySelector(".result-feedback");
+  el.querySelector("[data-query]").textContent = q;
   if (hits > 0) {
-    el.querySelector(".hits").textContent = hits;
+    el.querySelector("[data-hits]").textContent = hits;
   } else {
-    el.querySelector(".hits").textContent = "0";
+    el.querySelector("[data-hits]").textContent = "0";
   }
   el.classList.remove("hidden");
 }

@@ -27,3 +27,12 @@
     }
   }
 }
+
+.result-feedback {
+  margin-top: $gutter-xs;
+  font-size: $fs-sm;
+  [data-query],
+  [data-hits] {
+    font-weight: $fw-bold;
+  }
+}
