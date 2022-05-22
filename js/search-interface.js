@@ -76,7 +76,7 @@ export function trackPageControls() {
 
 function changePage() {
   clearResults();
-  findAll(q, this.dataset.scope);
+  findAll(q, parseInt(this.dataset.scope));
 }
 
 export function displayScope(fromValue, toValue) {

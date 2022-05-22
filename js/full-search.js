@@ -4,7 +4,7 @@ import { displayResultFeedback, displayScope, HTML, trackPageControls } from "./
 let q;
 let currentScope;
 const size = 5;
-const maxPages = 5;
+const maxPages = 10;
 let totalPages;
 let totalHits;
 let offset;
@@ -14,6 +14,9 @@ export default function findAll(query, scope) {
   q = query;
   /*   i = iteration; */
   currentScope = scope;
+  if (currentScope == maxPages) {
+    console.log("append pages from currentscope");
+  }
   console.log("query:", q, " & scope:", currentScope);
   offset = calculateOffset();
   console.log("current scope: ", currentScope);
