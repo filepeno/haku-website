@@ -1,4 +1,4 @@
-import findAll from "./full-search";
+import { findAll, initPagination } from "./full-search";
 
 //make not-global
 let q;
@@ -18,7 +18,7 @@ trackInteraction();
 
 function trackInteraction() {
   trackReturn();
-  trackNextAndPrevBtn();
+  /*   trackNextAndPrevBtn(); */
 }
 
 function trackReturn() {
@@ -61,22 +61,6 @@ export function clearResults() {
 
 function blurInput(input) {
   input.blur();
-}
-
-function trackNextAndPrevBtn() {
-  HTML.prevBtn.addEventListener("click", changePage);
-  HTML.nextBtn.addEventListener("click", changePage);
-}
-
-export function trackPageControls() {
-  HTML.pageControls.forEach((element) => {
-    element.addEventListener("click", changePage);
-  });
-}
-
-function changePage() {
-  clearResults();
-  findAll(q, parseInt(this.dataset.scope));
 }
 
 export function displayScope(fromValue, toValue) {

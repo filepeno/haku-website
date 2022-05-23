@@ -1,26 +1,23 @@
-import { displayResultFeedback, displayScope, HTML, trackPageControls } from "./search-interface";
+import { clearResults, displayResultFeedback, displayScope } from "./search-interface";
+import Pagination from "tui-pagination";
 
 //make not-global
 let q;
 let currentScope;
 const size = 5;
 const maxPages = 10;
-let totalPages;
 let totalHits;
 let offset;
 //
 
-export default function findAll(query, scope) {
+export function findAll(query, scope) {
+  console.log("find all");
   q = query;
   /*   i = iteration; */
   currentScope = scope;
-  if (currentScope == maxPages) {
-    console.log("append pages from currentscope");
-  }
   console.log("query:", q, " & scope:", currentScope);
   offset = calculateOffset();
   console.log("current scope: ", currentScope);
-  setScopeData();
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -64,11 +61,8 @@ function calculateScope() {
   displayScope(from, to);
 }
 
-function calculatePages() {
-  return Math.ceil(totalHits / maxPages);
-}
-
 function cleanResults(result) {
+  console.log("result", result);
   const hits = result.hits;
   console.log(hits);
   const content = hits.hits;
@@ -77,8 +71,7 @@ function cleanResults(result) {
     displayResults(content);
   }
   displayResultFeedback(totalHits);
-  totalPages = calculatePages(totalHits);
-  appendPages();
+  initPagination();
   calculateScope(offset, size);
 }
 
@@ -117,34 +110,28 @@ function appendResult(hit) {
   parent.appendChild(clone);
 }
 
-function appendPages() {
-  const parent = document.querySelector(".paging");
-  const template = document.querySelector("#page-template").content;
-  parent.innerHTML = "";
-  if (totalPages > maxPages) {
-    for (let i = 1; i <= maxPages; i++) {
-      appendPage(i);
-    }
-  } else {
-    for (let i = 1; i <= totalPages; i++) {
-      appendPage(i);
-    }
+export function initPagination() {
+  if (currentScope === 1) {
+    const container = document.getElementById("tui-pagination-container");
+    const pagination = new Pagination(container, {
+      totalItems: totalHits,
+      itemsPerPage: size,
+      visiblePages: maxPages,
+      template: {
+        page: '<button class="tui-page-btn text-link scope-btn">{{page}}<button>',
+        currentPage: '<button class="tui-page-btn tui-is-selected current-page text-link scope-btn">{{page}}</button>',
+        moveButton: '<button class="tui-page-btn tui-{{type}} custom-class-{{type}} text-link scope-btn" >' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
+        disabledMoveButton: '<span class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</span>",
+        moreButton: '<button class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' + '<span class="tui-ico-ellip">...</span>' + "</button>",
+      },
+    });
+    /*  pagination.movePageTo(currentScope); */
+    console.log("current page:", pagination.getCurrentPage());
+
+    pagination.on("afterMove", ({ page }) => {
+      console.log("new page:", page);
+      clearResults();
+      findAll(q, page);
+    });
   }
-
-  function appendPage(i) {
-    const clone = template.cloneNode(true);
-    clone.querySelector("button").dataset.scope = i;
-    clone.querySelector("button").textContent = i;
-    parent.appendChild(clone);
-  }
-
-  parent.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
-  HTML.pageControls = parent.querySelectorAll("button");
-  trackPageControls();
-}
-
-//set next and previous scope to next and previous buttons
-function setScopeData() {
-  HTML.prevBtn.dataset.scope = currentScope - 1;
-  HTML.nextBtn.dataset.scope = currentScope + 1;
 }
