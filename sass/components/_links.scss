@@ -19,15 +19,4 @@ header a {
     text-decoration: underline;
     color: $clr-contrast-lt;
   }
-  &.scope-btn {
-    padding: $gutter-xs;
-    &.current-page {
-      text-decoration: underline;
-      font-weight: $fw-bold;
-      color: $clr-blue;
-    }
-    &:hover {
-      color: $clr-blue-lt;
-    }
-  }
 }

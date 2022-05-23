@@ -54,17 +54,6 @@
   font-size: $fs-sm;
 }
 
-.scope-controls {
+.tui-pagination {
   margin-top: $gutter-lg;
-  @include flex-center;
-  gap: $gutter-md;
-  /*   max-width: $max-size-half; */
-  flex-wrap: wrap;
-  .text-link {
-    color: $clr-black;
-  }
-}
-
-.paging {
-  @include flex-center;
 }
