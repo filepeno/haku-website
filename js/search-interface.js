@@ -1,4 +1,4 @@
-import { findAll, initPagination } from "./full-search";
+import { findAll } from "./full-search";
 
 //make not-global
 let q;
@@ -67,5 +67,3 @@ export function displayScope(fromValue, toValue) {
   document.querySelector("[data-from]").textContent = fromValue;
   document.querySelector("[data-to]").textContent = toValue;
 }
-
-//highlight current scope

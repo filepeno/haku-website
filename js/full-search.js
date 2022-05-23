@@ -1,5 +1,5 @@
-import { clearResults, displayResultFeedback, displayScope } from "./search-interface";
-import Pagination from "tui-pagination";
+import { displayResultFeedback, displayScope } from "./search-interface";
+import { initPagination } from "./pagination";
 
 //make not-global
 let q;
@@ -11,9 +11,7 @@ let offset;
 //
 
 export function findAll(query, scope) {
-  console.log("find all");
   q = query;
-  /*   i = iteration; */
   currentScope = scope;
   console.log("query:", q, " & scope:", currentScope);
   offset = calculateOffset();
@@ -64,14 +62,13 @@ function calculateScope() {
 function cleanResults(result) {
   console.log("result", result);
   const hits = result.hits;
-  console.log(hits);
   const content = hits.hits;
   totalHits = hits.total.value;
   if (content.length > 0) {
     displayResults(content);
   }
   displayResultFeedback(totalHits);
-  initPagination();
+  initPagination(currentScope, q, totalHits, size, maxPages);
   calculateScope(offset, size);
 }
 
@@ -108,30 +105,4 @@ function appendResult(hit) {
   }
 
   parent.appendChild(clone);
-}
-
-export function initPagination() {
-  if (currentScope === 1) {
-    const container = document.getElementById("tui-pagination-container");
-    const pagination = new Pagination(container, {
-      totalItems: totalHits,
-      itemsPerPage: size,
-      visiblePages: maxPages,
-      template: {
-        page: '<button class="tui-page-btn">{{page}}<button>',
-        currentPage: '<button class="tui-page-btn tui-is-selected">{{page}}</button>',
-        moveButton: '<button class="tui-page-btn tui-{{type}} custom-class-{{type}}" >' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
-        disabledMoveButton: '<button class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
-        moreButton: '<button class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' + '<span class="tui-ico-ellip">...</span>' + "</button>",
-      },
-    });
-    /*  pagination.movePageTo(currentScope); */
-    console.log("current page:", pagination.getCurrentPage());
-
-    pagination.on("afterMove", ({ page }) => {
-      console.log("new page:", page);
-      clearResults();
-      findAll(q, page);
-    });
-  }
 }
