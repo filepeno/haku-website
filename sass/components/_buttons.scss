@@ -59,6 +59,11 @@ button {
     }
   }
 
+  &.body-btn {
+    @include main-typography;
+    padding: 1.2rem 2rem;
+  }
+
   &:hover {
     background-color: $clr-blue-lt;
     color: $clr-white;
