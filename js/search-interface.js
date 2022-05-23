@@ -12,6 +12,7 @@ function init() {
   HTML.prevBtn = document.querySelector(".prev");
   HTML.nextBtn = document.querySelector(".next");
   HTML.pageControls;
+  HTML.pagingWrapper = document.querySelector(".paging");
 }
 
 trackInteraction();

@@ -4,7 +4,7 @@ import { displayResultFeedback, displayScope, HTML, trackPageControls } from "./
 let q;
 let currentScope;
 const size = 5;
-const maxPages = 10;
+const maxPages = 5;
 let totalPages;
 let totalHits;
 let offset;
@@ -12,15 +12,11 @@ let offset;
 
 export default function findAll(query, scope) {
   q = query;
-  /*   i = iteration; */
   currentScope = scope;
-  if (currentScope == maxPages) {
-    console.log("append pages from currentscope");
-  }
+
   console.log("query:", q, " & scope:", currentScope);
   offset = calculateOffset();
   console.log("current scope: ", currentScope);
-  setScopeData();
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -65,7 +61,7 @@ function calculateScope() {
 }
 
 function calculatePages() {
-  return Math.ceil(totalHits / maxPages);
+  return Math.ceil(totalHits / size);
 }
 
 function cleanResults(result) {
@@ -78,8 +74,19 @@ function cleanResults(result) {
   }
   displayResultFeedback(totalHits);
   totalPages = calculatePages(totalHits);
-  appendPages();
   calculateScope(offset, size);
+  if ((currentScope > maxPages && totalPages > maxPages) || currentScope === 1) {
+    appendPages();
+  }
+  setScopeData();
+  /* displayCurrentPage(); */
+}
+
+function displayCurrentPage() {
+  HTML.pageControls.forEach((element) => {
+    element.classList.remove("current-page");
+  });
+  HTML.pagingWrapper.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
 }
 
 function displayResults(hits) {
@@ -118,28 +125,39 @@ function appendResult(hit) {
 }
 
 function appendPages() {
-  const parent = document.querySelector(".paging");
+  console.log("append pages");
   const template = document.querySelector("#page-template").content;
-  parent.innerHTML = "";
-  if (totalPages > maxPages) {
-    for (let i = 1; i <= maxPages; i++) {
-      appendPage(i);
-    }
+  HTML.pagingWrapper.innerHTML = "";
+  let remainingPages = totalPages - currentScope * maxPages;
+  if (currentScope < maxPages) {
+    console.log("current scope is smaller than max pages");
   } else {
-    for (let i = 1; i <= totalPages; i++) {
-      appendPage(i);
+    console.log("current scope is BIGGEr than max pages");
+  }
+  console.log("total pages: ", totalPages, "& remaining pages:", remainingPages);
+  let scope = currentScope;
+  if (totalPages > maxPages) {
+    console.log("there are more pages than max pages");
+
+    for (let i = 1; i <= maxPages; i++, scope++) {
+      appendPage(scope);
+    }
+  } else if (totalPages <= maxPages) {
+    console.log("there are less or same pages left than max pages, and current scope is:", currentScope);
+    for (let i = 1; i <= totalPages; i++, scope++) {
+      appendPage(scope);
     }
   }
 
   function appendPage(i) {
+    console.log("append page", i);
     const clone = template.cloneNode(true);
     clone.querySelector("button").dataset.scope = i;
     clone.querySelector("button").textContent = i;
-    parent.appendChild(clone);
+    HTML.pagingWrapper.appendChild(clone);
   }
 
-  parent.querySelector(`[data-scope="${currentScope}"]`).classList.add("current-page");
-  HTML.pageControls = parent.querySelectorAll("button");
+  HTML.pageControls = HTML.pagingWrapper.querySelectorAll("button");
   trackPageControls();
 }
 
