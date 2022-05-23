@@ -118,10 +118,10 @@ export function initPagination() {
       itemsPerPage: size,
       visiblePages: maxPages,
       template: {
-        page: '<button class="tui-page-btn text-link scope-btn">{{page}}<button>',
-        currentPage: '<button class="tui-page-btn tui-is-selected current-page text-link scope-btn">{{page}}</button>',
-        moveButton: '<button class="tui-page-btn tui-{{type}} custom-class-{{type}} text-link scope-btn" >' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
-        disabledMoveButton: '<button class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}} text-link scope-btn">' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
+        page: '<button class="tui-page-btn">{{page}}<button>',
+        currentPage: '<button class="tui-page-btn tui-is-selected">{{page}}</button>',
+        moveButton: '<button class="tui-page-btn tui-{{type}} custom-class-{{type}}" >' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
+        disabledMoveButton: '<button class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' + '<span class="tui-ico-{{type}}">{{type}}</span>' + "</button>",
         moreButton: '<button class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' + '<span class="tui-ico-ellip">...</span>' + "</button>",
       },
     });
