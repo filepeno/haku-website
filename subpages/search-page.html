@@ -35,12 +35,22 @@
                         <input type="checkbox">
                         <span class="slider"></span>
                     </label>
-                    <label class="search-input">
-                        <span>Searching on</span>
-                        <span data-site="">knowit.eu</span>
-                        <span class="icon"></span>
-                        <input type="search" id="search-input" placeholder="Search for" onfocus="this.value=''">
-                    </label>
+                    <div class="search-wrapper">
+                        <label for="search-input">
+                            <span>Searching on</span>
+                            <span data-site="">knowit.eu</span>
+                            <span class="icon"></span>
+
+                        </label>
+                        <input class="suggestions-active" type="search" id="search-input" name="search-input"
+                            placeholder="Search for" onfocus="this.value=''">
+                        <div class="suggestions">
+                            <ul>
+                                <li><button>Suggestion</button></li>
+                                <li><button>Suggestion</button></li>
+                            </ul>
+                        </div>
+                    </div>
                 </form>
                 <p class="result-feedback hidden">Your search on <span data-query>query</span> returned <span
                         data-hits>1</span> result(s).</p>
