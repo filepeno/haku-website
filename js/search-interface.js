@@ -74,6 +74,7 @@ export function toggleSearchArea() {
 export function displaySuggestions() {
   console.log("display suggestions");
   HTML.suggestionsWrpr.classList.remove("hidden");
+  HTML.input.addEventListener("blur", hideSuggestions);
 }
 export function hideSuggestions() {
   console.log("hide suggestions");
