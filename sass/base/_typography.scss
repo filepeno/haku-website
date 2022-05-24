@@ -17,6 +17,11 @@
     font-size: $fs-heading-lg;
   }
 }
+@mixin h3-typography {
+  font-family: $ff-heading-secondary;
+  font-weight: $fw-medium;
+  font-size: $fs-heading-xs;
+}
 
 @mixin main-typography {
   font-family: $ff-main;
@@ -57,8 +62,7 @@ h2,
 }
 
 h3 {
-  @include h2-typography;
-  font-size: $fs-heading-xs;
+  @include h3-typography;
 }
 
 p {
