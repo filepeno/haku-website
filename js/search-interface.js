@@ -5,7 +5,12 @@ export const HTML = {};
 
 window.addEventListener("load", trackInteraction);
 
-trackInteraction();
+init();
+
+function init() {
+  HTML.input = document.querySelector("#search-input");
+  trackInteraction();
+}
 
 function trackInteraction() {
   trackReturn();
@@ -13,21 +18,17 @@ function trackInteraction() {
 }
 
 function trackReturn() {
-  const input = document.querySelector("#search-input");
-  let q;
-  input.onkeydown = (e) => {
-    q = input.value;
+  HTML.input.onkeydown = (e) => {
     //check if return key
     if (e.keyCode === 13) {
       e.preventDefault();
-      handleRequest(q);
-      blurInput(input);
+      handleRequest(HTML.input.value);
+      blurInput();
     }
   };
-  input.onkeyup = () => {
-    q = input.value;
-    if (q.length > 1) {
-      autoSuggest(q);
+  HTML.input.onkeyup = () => {
+    if (HTML.input.value.length > 1) {
+      autoSuggest(HTML.input.value);
     }
   };
 }
@@ -57,8 +58,8 @@ export function clearResults() {
   parent.innerHTML = "";
 }
 
-function blurInput(input) {
-  input.blur();
+function blurInput() {
+  HTML.input.blur();
 }
 
 export function displayScope(fromValue, toValue) {
