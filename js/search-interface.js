@@ -25,6 +25,7 @@ function trackReturn() {
       e.preventDefault();
       handleRequest(HTML.input.value);
       blurInput();
+      hideSuggestions();
     }
   };
   HTML.input.onkeyup = () => {
