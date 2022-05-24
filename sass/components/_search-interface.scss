@@ -19,7 +19,7 @@ $shadow: 0 4px 4px #654cff;
     }
     margin-top: $gutter-md;
 
-    [data-site] {
+    .site-to-search {
       @include h2-typography;
     }
   }

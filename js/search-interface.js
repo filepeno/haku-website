@@ -1,16 +1,22 @@
 import { findAll } from "./full-search";
 import { autoSuggest } from "./autosuggest";
+import { initSearch } from "./init-search";
 
 export const HTML = {};
 
-window.addEventListener("load", trackInteraction);
-
-init();
+window.addEventListener("load", init);
 
 function init() {
   HTML.input = document.querySelector("#search-input");
   HTML.suggestionsWrpr = document.querySelector(".suggestions-wrapper");
+  HTML.site = document.querySelector(".site-to-search");
+  const defaultSite = "https://stromlin-es.test.headnet.dk/site-da-knowit/_search/template";
+  initSearch(defaultSite);
   trackInteraction();
+}
+
+export function displayDomain(domain) {
+  HTML.site.textContent = domain;
 }
 
 function trackInteraction() {
