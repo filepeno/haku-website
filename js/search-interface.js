@@ -76,12 +76,21 @@ export function displaySuggestions() {
   console.log("display suggestions");
   HTML.suggestionsWrpr.classList.remove("hidden");
   HTML.input.classList.add("suggestions-active");
-  HTML.input.addEventListener("blur", hideSuggestions);
+  window.addEventListener("click", checkIfSuggestion);
 }
+
+function checkIfSuggestion(e) {
+  console.log(e.target);
+  if (!e.target.classList.contains(".suggestion")) {
+    hideSuggestions();
+  }
+}
+
 export function hideSuggestions() {
   console.log("hide suggestions");
   HTML.suggestionsWrpr.classList.add("hidden");
   HTML.input.classList.remove("suggestions-active");
+  window.removeEventListener("click", checkIfSuggestion);
 }
 
 export function clearSuggestions() {
