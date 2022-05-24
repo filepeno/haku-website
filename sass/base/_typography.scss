@@ -30,6 +30,14 @@
   color: $clr-black;
   text-decoration: none;
 }
+@mixin button-typography {
+  font-family: $ff-main;
+  font-size: $fs-body;
+  font-weight: $fw-medium;
+  @media (min-width: $mq-sm) {
+    font-size: $fs-heading-xs;
+  }
+}
 
 h1,
 .title {

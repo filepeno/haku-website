@@ -16,22 +16,18 @@ button {
 }
 
 .button {
+  @include flex-center;
+  @include button-typography;
   position: relative;
   text-decoration: none;
   text-align: center;
   /*   white-space: nowrap; */
   margin: 0;
-  @include flex-center;
   overflow: hidden;
   cursor: pointer;
   background-color: $clr-blue;
   color: $clr-white;
-  font-family: $ff-main;
-  font-size: $fs-heading-xs;
-  font-weight: $fw-medium;
-  padding: 1.5rem 3rem;
-  height: 2rem;
-  /*   box-shadow: 0 5px 6px rgb(171 171 171); */
+  padding: 0.5rem 2rem;
   /* From https://css.glass */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(14.1px);
