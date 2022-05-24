@@ -4,6 +4,11 @@
 $radius: 20px;
 $shadow: 0 4px 4px #654cff;
 
+.search-interface {
+  @include flex-center;
+  flex-direction: column;
+}
+
 .search-wrapper {
   position: relative;
   label {
