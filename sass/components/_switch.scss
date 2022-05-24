@@ -1,6 +1,9 @@
 @import "../base/variables";
 @import "../base/typography";
 
+$width: 60px;
+$half-width: 34px;
+
 /* The switch - the box around the slider */
 .switch {
   @include flex-center;
@@ -10,12 +13,18 @@
   flex-direction: column;
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  height: $half-width;
+}
+
+.label-text {
+  position: absolute;
+  top: -23px;
+  width: 100%;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
+  visibility: hidden;
   opacity: 0;
   width: 0;
   height: 0;
@@ -23,6 +32,8 @@
 
 /* The slider */
 .slider {
+  width: $width;
+  height: $half-width;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -32,7 +43,7 @@
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border-radius: 34px;
+  border-radius: $half-width;
 }
 
 .slider:before {
