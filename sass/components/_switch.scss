@@ -13,14 +13,13 @@ $offset: 26px;
   width: 100%;
   flex-direction: column;
   position: relative;
-  display: inline-block;
-  height: $half-width;
 }
 
 .label-text {
-  position: absolute;
-  top: -23px;
+  text-align: center;
+  position: relative;
   width: 100%;
+  margin-bottom: $gutter-xs;
 }
 
 /* Hide default HTML checkbox */
@@ -34,7 +33,7 @@ $offset: 26px;
 .slider {
   width: $width;
   height: $half-width;
-  position: absolute;
+  position: relative;
   cursor: pointer;
   top: 0;
   left: 0;
