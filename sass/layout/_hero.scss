@@ -1,4 +1,5 @@
 @import "../base/variables";
+@import "../base/typography";
 
 .hero {
   @include flex-center;
@@ -12,16 +13,13 @@
   @include flex-center;
   flex-direction: column;
   gap: $gutter-sm;
+  max-width: $max-size;
 
   .subtitle {
-    display: none;
     text-align: center;
-    font-size: $fs-heading-xs;
-    @media (min-width: $mq-xs) {
-      display: block;
-    }
+    font-size: $fs-body;
     @media (min-width: $mq-sm) {
-      font-size: $fs-heading-sm;
+      font-size: $fs-heading-xs;
     }
   }
 }
