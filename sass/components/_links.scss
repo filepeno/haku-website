@@ -20,3 +20,10 @@ header a {
     color: $clr-contrast-lt;
   }
 }
+
+.suggestion {
+  @include main-typography;
+  &:hover {
+    color: $clr-contrast-lt;
+  }
+}
