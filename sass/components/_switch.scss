@@ -1,16 +1,18 @@
 @import "../base/variables";
 @import "../base/typography";
 
-$width: 60px;
-$half-width: 34px;
-$offset: 26px;
+$width: 56px;
+$height: 33px;
+$slider-radius: 27px;
+$offset: 3px;
+$translate: 22px;
 
 /* The switch - the box around the slider */
 .switch {
   @include flex-center;
   @include main-typography;
   color: $clr-white;
-  width: 100%;
+  width: fit-content;
   flex-direction: column;
   position: relative;
 }
@@ -32,7 +34,7 @@ $offset: 26px;
 /* The slider */
 .slider {
   width: $width;
-  height: $half-width;
+  height: $height;
   position: relative;
   cursor: pointer;
   top: 0;
@@ -42,16 +44,20 @@ $offset: 26px;
   background-color: $clr-green;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border-radius: $half-width;
+  border-radius: $height;
+  -webkit-border-radius: $height;
+  -moz-border-radius: $height;
+  -ms-border-radius: $height;
+  -o-border-radius: $height;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: $slider-radius;
+  width: $slider-radius;
+  left: $offset;
+  bottom: $offset;
   background-color: $clr-contrast-dk;
   transition: transform 0.2s;
   border-radius: 50%;
@@ -72,7 +78,7 @@ input:focus-visible + .slider {
 
 input:checked + .slider:before {
   background-color: $clr-contrast-ltr;
-  -webkit-transform: translateX($offset);
-  -ms-transform: translateX($offset);
-  transform: translateX($offset);
+  -webkit-transform: translateX($translate);
+  -ms-transform: translateX($translate);
+  transform: translateX($translate);
 }
