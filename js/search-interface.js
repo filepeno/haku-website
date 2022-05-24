@@ -1,4 +1,5 @@
 import { findAll } from "./full-search";
+import { autoSuggest } from "./autosuggest";
 
 export const HTML = {};
 
@@ -13,13 +14,20 @@ function trackInteraction() {
 
 function trackReturn() {
   const input = document.querySelector("#search-input");
+  let q;
   input.onkeydown = (e) => {
-    const q = input.value;
+    q = input.value;
     //check if return key
     if (e.keyCode === 13) {
       e.preventDefault();
       handleRequest(q);
       blurInput(input);
+    }
+  };
+  input.onkeyup = () => {
+    q = input.value;
+    if (q.length > 1) {
+      autoSuggest(q);
     }
   };
 }
