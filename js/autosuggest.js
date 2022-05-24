@@ -39,10 +39,10 @@ function cleanResults(result) {
     hits.forEach((hit) => {
       appendSuggestion(hit);
     });
-
     displaySuggestions();
   } else {
     clearSuggestions();
+    hideSuggestions();
   }
 }
 
