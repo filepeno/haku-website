@@ -50,6 +50,8 @@ function appendSuggestion(hit) {
   const parent = document.querySelector(".suggestions-wrapper ul");
   const template = document.querySelector("#autosuggest-template").content;
   const clone = template.cloneNode(true);
-  clone.querySelector("a").textContent = hit._source.title;
+  const link = clone.querySelector("a");
+  link.textContent = hit._source.title;
+  link.href = hit._source.url;
   parent.appendChild(clone);
 }
