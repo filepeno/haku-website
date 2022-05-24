@@ -59,7 +59,6 @@ export function displayScope(fromValue, toValue) {
 }
 
 export function toggleSearchArea() {
-  console.log("show search");
   document.querySelector(".results-wrapper").classList.remove("hidden");
   document.querySelector(".hero").classList.add("search-active");
 }

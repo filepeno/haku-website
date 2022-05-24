@@ -49,8 +49,15 @@ function calculateOffset() {
 }
 
 function calculateScope() {
-  const from = offset + 1;
+  let from;
   let to;
+  //calculate from-value
+  if (totalHits === 0) {
+    from = 0;
+  } else {
+    from = offset + 1;
+  }
+  //calculate to-value
   if (totalHits < offset + size) {
     to = totalHits;
   } else {
@@ -73,7 +80,6 @@ function cleanResults(result) {
     displayResultFeedback(q, totalHits);
     initPagination(q, totalHits, size, maxPages);
   }
-
   calculateScope(offset, size);
 }
 
