@@ -1,28 +1,32 @@
-import { clearSuggestions, displaySuggestions } from "./search-interface";
+import { clearSuggestions, displaySuggestions, hideSuggestions } from "./search-interface";
 
 export function autoSuggest(q) {
-  console.log("query", q);
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  if (q.length > 1) {
+    console.log("query", q);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({
-    id: "autosuggest",
-    params: {
-      query_string: q,
-    },
-  });
+    var raw = JSON.stringify({
+      id: "autosuggest",
+      params: {
+        query_string: q,
+      },
+    });
 
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
 
-  fetch("https://stromlin-es.test.headnet.dk/site-da-knowit/_search/template", requestOptions)
-    .then((response) => response.json())
-    .then((result) => cleanResults(result));
-  /* .catch((error) => console.log("error", error)); */
+    fetch("https://stromlin-es.test.headnet.dk/site-da-knowit/_search/template", requestOptions)
+      .then((response) => response.json())
+      .then((result) => cleanResults(result));
+    /* .catch((error) => console.log("error", error)); */
+  } else {
+    hideSuggestions();
+  }
 }
 
 function cleanResults(result) {

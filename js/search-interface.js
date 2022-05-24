@@ -9,6 +9,7 @@ init();
 
 function init() {
   HTML.input = document.querySelector("#search-input");
+  HTML.suggestionsWrpr = document.querySelector(".suggestions-wrapper");
   trackInteraction();
 }
 
@@ -27,9 +28,7 @@ function trackReturn() {
     }
   };
   HTML.input.onkeyup = () => {
-    if (HTML.input.value.length > 1) {
-      autoSuggest(HTML.input.value);
-    }
+    autoSuggest(HTML.input.value);
   };
 }
 
@@ -73,10 +72,14 @@ export function toggleSearchArea() {
 }
 
 export function displaySuggestions() {
-  console.log("display");
-  document.querySelector(".suggestions-wrapper").classList.remove("hidden");
+  console.log("display suggestions");
+  HTML.suggestionsWrpr.classList.remove("hidden");
+}
+export function hideSuggestions() {
+  console.log("hide suggestions");
+  HTML.suggestionsWrpr.classList.add("hidden");
 }
 
 export function clearSuggestions() {
-  document.querySelector(".suggestions-wrapper ul").innerHTML = "";
+  HTML.suggestionsWrpr.querySelector("ul").innerHTML = "";
 }
