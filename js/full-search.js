@@ -93,11 +93,13 @@ function appendResult(hit) {
   const parent = document.querySelector(".results-area");
   const template = document.querySelector("#result-template").content;
   const clone = template.cloneNode(true);
+  const anchor = clone.querySelector("a");
   const date = clone.querySelector(".date");
   const title = clone.querySelector(".result-title");
   const excerpt1 = clone.querySelector(".excerpt-1");
   const excerpt2 = clone.querySelector(".excerpt-2");
 
+  anchor.href = hit._source.url;
   date.textContent = hit._source.date_published;
 
   if (hit.highlight.title) {
