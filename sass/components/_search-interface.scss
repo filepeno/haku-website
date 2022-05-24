@@ -43,6 +43,10 @@ $shadow: 0 4px 4px #654cff;
     -o-border-radius: $radius $radius 0 0;
     border-bottom: 1px solid #b5b5b5;
   }
+
+  @media (min-width: $mq-lg) {
+    width: $max-size-half;
+  }
 }
 
 .result-feedback {

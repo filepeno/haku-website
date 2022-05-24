@@ -10,4 +10,10 @@
       margin-top: $gutter-md;
     }
   }
+
+  .hero-content {
+    @media (min-width: $mq-sm) {
+      max-width: $max-size;
+    }
+  }
 }

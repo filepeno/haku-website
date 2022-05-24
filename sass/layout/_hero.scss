@@ -12,9 +12,6 @@
   @include flex-center;
   flex-direction: column;
   gap: $gutter-sm;
-  @media (min-width: $mq-sm) {
-    max-width: 600px;
-  }
 
   .subtitle {
     display: none;
