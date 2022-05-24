@@ -12,7 +12,10 @@
 @mixin h2-typography {
   font-family: $ff-heading-secondary;
   font-weight: $fw-medium;
-  font-size: $fs-heading-lg;
+  font-size: $fs-heading-md;
+  @media (min-width: $mq-sm) {
+    font-size: $fs-heading-lg;
+  }
 }
 
 @mixin main-typography {

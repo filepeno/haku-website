@@ -21,7 +21,6 @@ $shadow: 0 4px 4px #654cff;
 }
 
 #search-input {
-  width: 300px;
   border-radius: $radius;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -44,7 +43,7 @@ $shadow: 0 4px 4px #654cff;
     border-bottom: 1px solid #b5b5b5;
   }
 
-  @media (min-width: $mq-lg) {
+  @media (min-width: $mq-sm) {
     width: $max-size-half;
   }
 }
