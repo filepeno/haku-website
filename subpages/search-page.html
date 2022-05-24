@@ -42,12 +42,12 @@
                             <span class="icon"></span>
 
                         </label>
-                        <input class="suggestions-active" type="search" id="search-input" name="search-input"
-                            placeholder="Search for" onfocus="this.value=''">
-                        <div class="suggestions">
+                        <input type="search" id="search-input" name="search-input" placeholder="Search for"
+                            onfocus="this.value=''">
+                        <div class="suggestions-wrapper hidden">
                             <ul>
-                                <li><button>Suggestion</button></li>
-                                <li><button>Suggestion</button></li>
+
+                                <!-- suggestions come here -->
                             </ul>
                         </div>
                     </div>
@@ -94,6 +94,10 @@
                     takes in consideration</span>... <span class="excerpt-2"></span>
             </p>
         </article>
+    </template>
+
+    <template id="autosuggest-template">
+        <li><a href="">Suggestion</a></li>
     </template>
 
     <script type="module" src="/main.js"></script>

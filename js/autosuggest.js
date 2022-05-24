@@ -1,3 +1,5 @@
+import { clearSuggestions, displaySuggestions } from "./search-interface";
+
 export function autoSuggest(q) {
   console.log("query", q);
   var myHeaders = new Headers();
@@ -19,19 +21,31 @@ export function autoSuggest(q) {
 
   fetch("https://stromlin-es.test.headnet.dk/site-da-knowit/_search/template", requestOptions)
     .then((response) => response.json())
-    .then((result) => cleanResults(result))
-    .catch((error) => console.log("error", error));
+    .then((result) => cleanResults(result));
+  /* .catch((error) => console.log("error", error)); */
 }
 
 function cleanResults(result) {
-  const hits = result.hits;
-  const totalHits = hits.total.value;
+  const hits = result.hits.hits;
+  console.log(hits);
+  const totalHits = hits.length;
   console.log("total hits:", totalHits);
   if (totalHits > 0) {
-    displaySuggestions(hits);
+    clearSuggestions();
+    hits.forEach((hit) => {
+      appendSuggestion(hit);
+    });
+
+    displaySuggestions();
+  } else {
+    clearSuggestions();
   }
 }
 
-function displaySuggestions(hits) {
-  console.log("hits", hits);
+function appendSuggestion(hit) {
+  const parent = document.querySelector(".suggestions-wrapper ul");
+  const template = document.querySelector("#autosuggest-template").content;
+  const clone = template.cloneNode(true);
+  clone.querySelector("a").textContent = hit._source.title;
+  parent.appendChild(clone);
 }

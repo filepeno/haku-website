@@ -70,3 +70,12 @@ export function toggleSearchArea() {
   document.querySelector(".results-wrapper").classList.remove("hidden");
   document.querySelector(".hero").classList.add("search-active");
 }
+
+export function displaySuggestions() {
+  console.log("display");
+  document.querySelector(".suggestions-wrapper").classList.remove("hidden");
+}
+
+export function clearSuggestions() {
+  document.querySelector(".suggestions-wrapper ul").innerHTML = "";
+}
