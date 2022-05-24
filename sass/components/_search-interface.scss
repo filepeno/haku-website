@@ -21,12 +21,13 @@ $shadow: 0 4px 4px #654cff;
 }
 
 #search-input {
+  width: 300px;
   border-radius: $radius;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   -o-border-radius: $radius;
-
+  font-weight: $fw-regular;
   background-color: $clr-light-bg;
   @include box-shadow-transition;
 
@@ -56,7 +57,6 @@ $shadow: 0 4px 4px #654cff;
 .suggestions-wrapper {
   position: absolute;
   width: 100%;
-  z-index: 0;
   background-color: $clr-white;
   padding: $gutter-md;
   border-radius: 0 0 $radius $radius;
@@ -65,4 +65,12 @@ $shadow: 0 4px 4px #654cff;
   -ms-border-radius: 0 0 $radius $radius;
   -o-border-radius: 0 0 $radius $radius;
   box-shadow: $shadow;
+
+  ul {
+    @include flex-column;
+    gap: $gutter-sm;
+    a {
+      @include main-typography;
+    }
+  }
 }
