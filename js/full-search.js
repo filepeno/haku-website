@@ -1,4 +1,4 @@
-import { displayResultFeedback, displayScope } from "./search-interface";
+import { displayResultFeedback, displayScope, toggleSearchArea } from "./search-interface";
 import { initPagination } from "./pagination";
 
 //make not-global
@@ -66,6 +66,7 @@ function cleanResults(result) {
   totalHits = hits.total.value;
   if (content.length > 0) {
     displayResults(content);
+    toggleSearchArea();
   }
   //if first search
   if (currentScope === 1) {

@@ -4,7 +4,15 @@
 .search-interface-page {
   .hero {
     background-image: url("/assets/img/water_crop_2100x822.png");
-    height: 55vh;
+    max-height: 100vh;
+    transition: max-height 0.5s ease-out;
+    -webkit-transition: max-height 0.5s ease-out;
+    -moz-transition: max-height 0.5s ease-out;
+    -ms-transition: max-height 0.5s ease-out;
+    -o-transition: max-height 0.5s ease-out;
+    &.search-active {
+      max-height: 60vh;
+    }
   }
 
   .hero-content {
@@ -37,7 +45,7 @@
   .disclaimer {
     @include flex-center;
     max-width: $max-size-half;
-    margin-top: $gutter-xxl;
+    padding-top: $gutter-xxl;
     margin: 0 auto;
     flex-direction: column;
     text-align: center;

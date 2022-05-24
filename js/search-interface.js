@@ -57,3 +57,9 @@ export function displayScope(fromValue, toValue) {
   document.querySelector("[data-from]").textContent = fromValue;
   document.querySelector("[data-to]").textContent = toValue;
 }
+
+export function toggleSearchArea() {
+  console.log("show search");
+  document.querySelector(".results-wrapper").classList.remove("hidden");
+  document.querySelector(".hero").classList.add("search-active");
+}
