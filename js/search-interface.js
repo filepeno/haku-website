@@ -1,18 +1,8 @@
 import { findAll } from "./full-search";
 
-//make not-global
-let q;
-//
-
 export const HTML = {};
 
-init();
-
-function init() {
-  HTML.prevBtn = document.querySelector(".prev");
-  HTML.nextBtn = document.querySelector(".next");
-  HTML.pageControls;
-}
+window.addEventListener("load", trackInteraction);
 
 trackInteraction();
 
@@ -24,7 +14,7 @@ function trackInteraction() {
 function trackReturn() {
   const input = document.querySelector("#search-input");
   input.onkeydown = (e) => {
-    q = input.value;
+    const q = input.value;
     //check if return key
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -43,7 +33,7 @@ function handleRequest(q) {
   clearResults();
 }
 
-export function displayResultFeedback(hits) {
+export function displayResultFeedback(q, hits) {
   const el = document.querySelector(".result-feedback");
   el.querySelector("[data-query]").textContent = q;
   if (hits > 0) {

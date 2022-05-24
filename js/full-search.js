@@ -67,8 +67,12 @@ function cleanResults(result) {
   if (content.length > 0) {
     displayResults(content);
   }
-  displayResultFeedback(totalHits);
-  initPagination(currentScope, q, totalHits, size, maxPages);
+  //if first search
+  if (currentScope === 1) {
+    displayResultFeedback(q, totalHits);
+    initPagination(q, totalHits, size, maxPages);
+  }
+
   calculateScope(offset, size);
 }
 
