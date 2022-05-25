@@ -72,6 +72,7 @@ $gutter-xxxl: 170px;
 $max-size-xl: 1000px;
 $max-size: 700px;
 $max-size-half: calc($max-size/2);
+$max-size-double: calc($max-size * 2);
 
 /* Mixins */
 @mixin flex-center {
