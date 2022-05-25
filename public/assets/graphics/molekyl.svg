@@ -27,6 +27,7 @@
 	.st21{font-family:'Mulish';}
 	.st22{font-size:34.4728px;}
 	.st23{letter-spacing:5;}
+	.st24{fill:#539EB7;stroke:#14576F;stroke-width:8;stroke-miterlimit:10;}
 </style>
 <g id="molekyl">
 	<g>
@@ -46,16 +47,17 @@
 		<text transform="matrix(1 0 0 1 229.9092 318.478)" class="st16 st17 st18 st19">Haku</text>
 		<text transform="matrix(1 0 0 1 236.2363 356.6367)" class="st20 st21 st22 st23">Site search</text>
 	</g>
-	<ellipse id="atom-1" class="st12" cx="113" cy="181" rx="31" ry="30"/>
-	<g id="atom-2">
+	<ellipse id="atom-1" class="st12" cx="113" cy="181" rx="30" ry="30"/>
+	<ellipse id="atom-2" class="st24" cx="546" cy="436" rx="30" ry="30"/>
+	<!-- <g id="atom-2">
 		<path class="st0" d="M538,468c-16,0-29-12.6-29-28s13-28,29-28s29,12.6,29,28S554,468,538,468z"/>
 		<g>
 			<path class="st13" d="M538,414c14.9,0,27,11.7,27,26s-12.1,26-27,26s-27-11.7-27-26S523.1,414,538,414 M538,410
 				c-17.1,0-31,13.4-31,30s13.9,30,31,30s31-13.4,31-30S555.1,410,538,410L538,410z"/>
 		</g>
-	</g>
-	<ellipse id="atom-3" class="st14" cx="113" cy="436" rx="31" ry="30"/>
-	<ellipse id="atom-4" class="st15" cx="546" cy="163" rx="31" ry="30"/>
+	</g> -->
+	<ellipse id="atom-3" class="st14" cx="113" cy="436" rx="30" ry="30"/>
+	<ellipse id="atom-4" class="st15" cx="546" cy="163" rx="30" ry="30"/>
 	<path id="track-1"
         fill="none"
         d="M 393.11,209.78
