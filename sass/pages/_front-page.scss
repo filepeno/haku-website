@@ -51,17 +51,67 @@
       text-align: center;
       .icon {
         justify-self: center;
+        width: 50px;
+        height: 50px;
       }
       h3 {
         align-self: center;
       }
     }
+  }
 
+  .icon {
+    background-image: url("/assets/icons/lightning.png");
+    @include bg-center-fullsize;
+  }
+
+  .features {
+    padding-top: $gutter-xl;
+    @include flex-column-center;
+    gap: $gutter-xxxl;
+
+    /*     @media (min-width: $mq-md) {
+      gap: $gutter-xxxl;
+    } */
     .icon {
-      background-image: url("/assets/icons/lightning.png");
-      @include bg-center-fullsize;
-      width: 50px;
-      height: 50px;
+      width: 30px;
+      height: 30px;
+    }
+    .text {
+      text-align: start;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: $gutter-md;
+      max-width: 500px;
+
+      @media (min-width: $mq-md) {
+        max-width: 1000px;
+        flex-direction: row;
+        justify-content: center;
+        gap: $gutter-xxl;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .text {
+        max-width: $max-size;
+      }
+
+      figure {
+        max-width: 150px;
+        @media (min-width: $mq-xs) {
+          max-width: 200px;
+        }
+        @media (min-width: $mq-md) {
+          max-width: 300px;
+        }
+      }
     }
   }
 }
