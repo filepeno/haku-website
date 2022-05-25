@@ -16,4 +16,51 @@
       max-width: $max-size;
     }
   }
+
+  .main-content > * {
+    padding: $gutter-lg $gutter-md;
+    @media (min-width: $mq-sm) {
+      padding: $gutter-lg $gutter-md;
+    }
+  }
+
+  .intro {
+    @include flex-column-center;
+    text-align: center;
+    min-height: 300px;
+    p {
+      @include center;
+      max-width: 500px;
+      margin-top: $gutter-sm;
+    }
+  }
+
+  .highlights {
+    background-color: $clr-green;
+
+    h2 {
+      text-align: center;
+      margin-bottom: $gutter-lg;
+    }
+
+    .item {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      padding: $gutter-sm $gutter-md;
+      text-align: center;
+      .icon {
+        justify-self: center;
+      }
+      h3 {
+        align-self: center;
+      }
+    }
+
+    .icon {
+      background-image: url("/assets/icons/lightning.png");
+      @include bg-center-fullsize;
+      width: 50px;
+      height: 50px;
+    }
+  }
 }

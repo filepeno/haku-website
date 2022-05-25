@@ -88,6 +88,13 @@ $max-size-half: calc($max-size/2);
   flex-direction: column;
 }
 
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin bg-center-cover {
   width: 100%;
   background-repeat: no-repeat;
@@ -105,6 +112,13 @@ $max-size-half: calc($max-size/2);
 
 @mixin center {
   margin: 0 auto;
+}
+
+@mixin bg-center-fullsize {
+  background-position: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hidden {
