@@ -43,7 +43,22 @@
       margin-bottom: $gutter-lg;
     }
 
-    .item {
+    .list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $gutter-lg;
+      align-items: center;
+      @media (min-width: $mq-sm) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (min-width: $mq-lg) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: $gutter-xl;
+      }
+    }
+
+    .list > * {
+      justify-self: center;
       display: grid;
       grid-template-rows: 1fr 1fr 1fr;
       /* padding: $gutter-sm $gutter-xxxl; */
