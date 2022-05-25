@@ -33,6 +33,7 @@
 }
 
 @mixin link-typography {
+  font-size: $fs-heading-xxs;
   font-family: $ff-main;
   font-weight: $fw-medium;
   color: $clr-black;
@@ -72,6 +73,7 @@ h3 {
 
 p {
   @include main-typography;
+  text-rendering: optimizeLegibility;
   &:not(:last-of-type) {
     margin-bottom: $gutter-sm;
   }
