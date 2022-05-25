@@ -20,7 +20,10 @@
 @mixin h3-typography {
   font-family: $ff-heading-secondary;
   font-weight: $fw-medium;
-  font-size: $fs-heading-xs;
+  font-size: $fs-heading-xxs;
+  @media (min-width: $mq-sm) {
+    font-size: $fs-heading-xs;
+  }
 }
 
 @mixin main-typography {

@@ -46,7 +46,8 @@
     .item {
       display: grid;
       grid-template-rows: 1fr 1fr 1fr;
-      padding: $gutter-sm $gutter-md;
+      /* padding: $gutter-sm $gutter-xxxl; */
+      max-width: $max-size-half;
       text-align: center;
       .icon {
         justify-self: center;
