@@ -2,11 +2,9 @@ let throttled = false;
 const delay = 1000;
 
 export function calculateHeroHeight() {
-  console.log("hero", throttled);
   const hero = document.querySelector(".hero");
   if (throttled === false) {
     throttled = true;
-    console.log(throttled);
     //get top element
     const header = document.querySelector("header");
     //get it's height
