@@ -155,3 +155,16 @@
     }
   }
 }
+
+.graphics {
+  svg {
+    max-width: 100%;
+    width: 150px;
+    @media (min-width: $mq-xs) {
+      width: 200px;
+    }
+    @media (min-width: $mq-md) {
+      width: 300px;
+    }
+  }
+}
