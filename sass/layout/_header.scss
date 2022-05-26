@@ -13,17 +13,24 @@ header {
   .home-link {
     @include bg-center-fullsize;
     background-image: url("../assets/img/haku_logo.png");
-    width: 120px;
     max-width: 100%;
     height: 100px;
+    width: 80px;
   }
 
   @media (min-width: $mq-sm) {
-    li {
-      a {
-        text-align: center;
-        white-space: nowrap;
-      }
+    a {
+      text-align: center;
+      white-space: nowrap;
+      font-size: $fs-body;
+    }
+  }
+  @media (min-width: $mq-md) {
+    .home-link {
+      width: 100px;
+    }
+    a {
+      font-size: $fs-heading-xxs;
     }
   }
 }
