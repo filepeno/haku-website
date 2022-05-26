@@ -16,12 +16,12 @@ function animateAtoms() {
   const path2 = document.querySelector("#track-2");
   const atom1 = document.querySelector("#atom-1");
   const atom2 = document.querySelector("#atom-4");
-
-  /*   animateAtom(path1, atom1);
-  animateAtom(path2, atom2); */
+  console.log(path1.getPointAtLength(-100));
+  animateAtom(path1, atom1, 6, false);
+  animateAtom(path2, atom2, 7, true);
 }
 
-function animateAtom(path, atom) {
+function animateAtom(path, atom, secs, bool) {
   // Create an object that gsap can animate
   const val = { distance: 0 };
   // Create a tween
@@ -31,7 +31,8 @@ function animateAtom(path, atom) {
     // Loop the animation
     repeat: -1,
     // Make the animation lasts 5 seconds
-    duration: 8,
+    duration: secs,
+    runBackwards: bool,
     ease: "none",
     // Function call on each frame of the animation
     onUpdate: () => {
