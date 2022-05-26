@@ -17,12 +17,12 @@
     }
   }
 
-  .main-content > * {
+  /*   .main-content > * {
     padding: $gutter-lg;
     @media (min-width: $mq-sm) {
       padding: $gutter-lg $gutter-md;
     }
-  }
+  } */
 
   .intro {
     @include flex-column-center;
@@ -36,6 +36,10 @@
   }
 
   .highlights {
+    padding: $gutter-lg;
+    @media (min-width: $mq-sm) {
+      padding: $gutter-lg $gutter-xl $gutter-xxl $gutter-xl;
+    }
     background-color: $clr-green;
 
     h2 {
@@ -87,10 +91,17 @@
   }
 }
 
+.features-wrapper {
+  padding: $gutter-xl $gutter-lg;
+  @media (min-width: $mq-sm) {
+    padding: $gutter-xl $gutter-xl;
+  }
+}
+
 .features {
-  padding: $gutter-xl $gutter-md;
+  margin-top: $gutter-xxl;
   @include flex-column-center;
-  gap: $gutter-xxxl;
+  gap: $gutter-xxxxl;
 
   /*     @media (min-width: $mq-md) {
     gap: $gutter-xxxl;
