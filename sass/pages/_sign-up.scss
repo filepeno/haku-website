@@ -1,20 +1,28 @@
 @import "../base/variables";
+@import "../base/typography";
 
 .sign-up-page {
   .main-content {
-    display: flex;
-    flex-direction: column;
+    max-width: $max-size-double;
+    @include center;
+    display: grid;
+    justify-content: center;
+    gap: $gutter-xxl;
     @include section-padding-mq;
 
-    @media (min-width: $mq-sm) {
-      flex-direction: row;
-      > * {
-        width: 50%;
-      }
+    @media (min-width: $mq-md) {
+      grid-template-columns: 1fr 400px;
 
-      .form-wrapper {
+      /*       * {
+        width: 50%;
+      } */
+
+      /*       .form-wrapper {
         margin: 0 $gutter-xl;
-      }
+      } */
     }
+  }
+  .content {
+    max-width: 700px;
   }
 }

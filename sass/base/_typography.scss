@@ -13,6 +13,7 @@
   font-family: $ff-heading-secondary;
   font-weight: $fw-medium;
   font-size: $fs-heading-md;
+
   @media (min-width: $mq-sm) {
     font-size: $fs-heading-lg;
   }
@@ -65,6 +66,16 @@ h1,
 h2,
 .subtitle {
   @include h2-typography;
+}
+
+h2 {
+  margin-bottom: $gutter-sm;
+  @media (min-width: $mq-sm) {
+    margin-bottom: $gutter-md;
+  }
+  &:not(:first-of-type) {
+    margin-top: $gutter-lg;
+  }
 }
 
 h3 {
