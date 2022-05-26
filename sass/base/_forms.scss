@@ -6,7 +6,7 @@ label {
 
 input:not([type="submit"], [type="checkbox"], [type="radio"]),
 textarea {
-  $height: 40px;
+  $height: 2.2rem;
   display: block;
   width: 100%;
   height: $height;
