@@ -4,7 +4,7 @@
 .front-page {
   .hero {
     height: 100vh;
-    background-image: url("/assets/img/glass-wall_crop_2100x1234.png");
+    background-image: url("../assets/img/glass-wall_crop_2100x1234.png");
 
     .button {
       margin-top: $gutter-md;
@@ -88,7 +88,7 @@
   }
 
   .icon {
-    background-image: url("/assets/icons/lightning.png");
+    background-image: url("../assets/icons/lightning.png");
     @include bg-center-fullsize;
   }
 }
@@ -154,7 +154,7 @@
     .logo {
       width: 100px;
       height: 50px;
-      background-image: url("/assets/img/smk-logo.png");
+      background-image: url("../assets/img/smk-logo.png");
     }
     @media (min-width: $mq-md) {
       padding: $gutter-xl;
