@@ -12,9 +12,16 @@ async function initSvg() {
 function animateAtoms() {
   console.log;
   // Query DOM Elements
-  const path = document.querySelector("#track-1");
+  const path1 = document.querySelector("#track-1");
+  const path2 = document.querySelector("#track-2");
   const atom1 = document.querySelector("#atom-1");
+  const atom2 = document.querySelector("#atom-4");
 
+  /*   animateAtom(path1, atom1);
+  animateAtom(path2, atom2); */
+}
+
+function animateAtom(path, atom) {
   // Create an object that gsap can animate
   const val = { distance: 0 };
   // Create a tween
@@ -31,8 +38,8 @@ function animateAtoms() {
       // Query a point at the new distance value
       const point = path.getPointAtLength(val.distance);
       // Update the atom coordinates
-      atom1.setAttribute("cx", point.x);
-      atom1.setAttribute("cy", point.y);
+      atom.setAttribute("cx", point.x);
+      atom.setAttribute("cy", point.y);
     },
   });
 }
