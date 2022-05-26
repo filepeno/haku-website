@@ -25,6 +25,10 @@
   } */
 
   .intro {
+    background-image: url("../assets/graphics/web_grey-line_01.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 40%;
     @include flex-column-center;
     text-align: center;
     min-height: 300px;
