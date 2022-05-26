@@ -2,6 +2,12 @@
 @import "../base/typography";
 
 .sign-up-page {
+  .hero {
+    background-image: url("/assets/img/72dpi_DSC9133_building_crop.jpg");
+    .title {
+      color: $clr-white;
+    }
+  }
   .main-content {
     max-width: $max-size-double;
     @include center;
