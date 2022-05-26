@@ -10,6 +10,14 @@ header {
   gap: $gutter-lg;
   margin: 0 $gutter-md;
 
+  .home-link {
+    @include bg-center-fullsize;
+    background-image: url("../assets/img/haku_logo.png");
+    width: 120px;
+    max-width: 100%;
+    height: 100px;
+  }
+
   @media (min-width: $mq-sm) {
     li {
       a {

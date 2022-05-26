@@ -90,13 +90,6 @@ $max-size-double: calc($max-size * 2);
   align-items: center;
 }
 
-@mixin bg-center-cover {
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 @mixin box-shadow-transition {
   transition: box-shadow 0.15s ease-in-out;
   -webkit-transition: box-shadow 0.15s ease-in-out;
@@ -110,10 +103,15 @@ $max-size-double: calc($max-size * 2);
 }
 
 @mixin bg-center-fullsize {
-  background-position: cover;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+@mixin bg-center-cover {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 @mixin section-padding-mq {
