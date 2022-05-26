@@ -33,13 +33,15 @@
       max-width: 500px;
       margin-top: $gutter-sm;
     }
+    @include section-padding-mq;
   }
 
   .highlights {
-    padding: $gutter-lg;
+    /*     padding: $gutter-lg;
     @media (min-width: $mq-sm) {
       padding: $gutter-lg $gutter-xl $gutter-xxl $gutter-xl;
-    }
+    } */
+    @include section-padding-mq;
     background-color: $clr-green;
 
     h2 {
@@ -92,10 +94,7 @@
 }
 
 .features-wrapper {
-  padding: $gutter-xl $gutter-lg;
-  @media (min-width: $mq-sm) {
-    padding: $gutter-xl $gutter-xl;
-  }
+  @include section-padding-mq;
 }
 
 .features {

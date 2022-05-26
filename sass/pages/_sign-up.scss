@@ -4,6 +4,7 @@
   .main-content {
     display: flex;
     flex-direction: column;
+    @include section-padding-mq;
 
     @media (min-width: $mq-sm) {
       flex-direction: row;

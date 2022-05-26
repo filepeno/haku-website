@@ -126,6 +126,16 @@ $max-size-double: calc($max-size * 2);
   background-repeat: no-repeat;
 }
 
+@mixin section-padding-mq {
+  padding: $gutter-lg $gutter-md;
+  @media (min-width: $mq-xs) {
+    padding: $gutter-xl $gutter-lg;
+  }
+  @media (min-width: $mq-sm) {
+    padding: $gutter-xxl $gutter-xl;
+  }
+}
+
 .hidden {
   display: none;
 }
