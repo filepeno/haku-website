@@ -4,6 +4,7 @@
 .sign-up-page {
   .hero {
     background-image: url("/assets/img/72dpi_DSC9133_building_crop.jpg");
+    background-color: $clr-blue-lt;
     .title {
       color: $clr-white;
     }
@@ -12,12 +13,14 @@
     max-width: $max-size-double;
     @include center;
     display: grid;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    /*     justify-content: center;
+    align-items: center; */
     gap: $gutter-xxl;
     @include section-padding-mq;
 
     @media (min-width: $mq-md) {
-      grid-template-columns: 1fr 400px;
+      grid-template-columns: 1fr 500px;
 
       /*       * {
         width: 50%;
@@ -30,5 +33,9 @@
   }
   .content {
     max-width: 700px;
+  }
+
+  .form-wrapper {
+    justify-self: center;
   }
 }

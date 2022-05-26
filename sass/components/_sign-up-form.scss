@@ -2,11 +2,46 @@
 @import "../base/typography";
 
 .form-wrapper {
+  width: 100%;
   background-color: $clr-blue-ltr;
-  max-width: 400px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: $gutter-lg;
+  max-width: 450px;
+  transition: all 0.2s ease-out;
+  @media (min-width: $mq-sm) {
+    padding: $gutter-lg $gutter-xl;
+  }
+
+  &:focus-within {
+    transform: translateY(-2px) scale(1.002);
+    -webkit-transform: translateY(-2px) scale(1.002);
+    -moz-transform: translateY(-2px) scale(1.002);
+    -ms-transform: translateY(-2px) scale(1.002);
+    -o-transform: translateY(-2px) scale(1.002);
+    box-shadow: 0 3px 4px rgba($color: #000000, $alpha: 0.3);
+  }
+
+  h2 {
+    text-align: center;
+  }
+  form {
+    @include flex-column;
+    gap: $gutter-sm;
+  }
+}
+
+.input-wrapper {
+  width: 100%;
+  /*   @include flex-column; */
+  input:focus {
+    border: 2px solid $clr-contrast-lt;
+  }
+
+  &:focus-within label {
+    font-weight: $fw-bold;
+  }
 }

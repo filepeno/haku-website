@@ -34,6 +34,7 @@ $shadow: 0 4px 4px #654cff;
   font-weight: $fw-regular;
   background-color: $clr-light-bg;
   @include box-shadow-transition;
+  padding-left: $gutter-md;
 
   &:focus {
     background-color: $clr-white;
