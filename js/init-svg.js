@@ -6,7 +6,18 @@ async function initSvg() {
   const molekyl = await fetch("assets/graphics/molekyl.svg");
   const molekylSvg = await molekyl.text();
   document.querySelector(".molekyl").innerHTML = molekylSvg;
+  //rotateMolekyl();
   animateAtoms();
+}
+
+function rotateMolekyl() {
+  const molekyl = document.querySelector("#molekyl");
+  gsap.to(molekyl, {
+    rotation: 360,
+    transformOrigin: "center center",
+    duration: 60,
+    repeat: -1,
+  });
 }
 
 function animateAtoms() {
