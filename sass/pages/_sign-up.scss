@@ -11,16 +11,17 @@
   }
   .main-content {
     max-width: $max-size-double;
-    @include center;
-    display: grid;
-    grid-template-columns: 1fr;
-    /*     justify-content: center;
-    align-items: center; */
-    gap: $gutter-xxl;
+    @include flex-column-center;
+    gap: $gutter-xl;
+
     @include section-padding-mq;
 
-    @media (min-width: $mq-md) {
-      grid-template-columns: 1fr 500px;
+    > * {
+      justify-self: center;
+    }
+
+    @media (min-width: $mq-lg) {
+      flex-direction: row;
 
       /*       * {
         width: 50%;
@@ -33,9 +34,12 @@
   }
   .content {
     max-width: 700px;
-  }
-
-  .form-wrapper {
-    justify-self: center;
+    .sign-up-steps {
+      padding: $gutter-md;
+      @include center;
+      @media (max-width: $mq-xs-down) {
+        display: none;
+      }
+    }
   }
 }
