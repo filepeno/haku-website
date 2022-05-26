@@ -15,10 +15,14 @@ function animateAtoms() {
   const path1 = document.querySelector("#track-1");
   const path2 = document.querySelector("#track-2");
   const atom1 = document.querySelector("#atom-1");
-  const atom2 = document.querySelector("#atom-4");
+  const atom2 = document.querySelector("#atom-2");
+  const atom3 = document.querySelector("#atom-3");
+  const atom4 = document.querySelector("#atom-4");
   console.log(path1.getPointAtLength(-100));
-  animateAtom(path1, atom1, 6, false);
-  animateAtom(path2, atom2, 7, true);
+  animateAtom(path1, atom1, 10, false);
+  animateAtom(path1, atom2, 8, true);
+  animateAtom(path2, atom3, 12, false);
+  animateAtom(path2, atom4, 7, true);
 }
 
 function animateAtom(path, atom, secs, bool) {
