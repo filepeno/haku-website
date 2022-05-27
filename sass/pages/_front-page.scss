@@ -28,10 +28,11 @@
   } */
 
   .intro {
-    background-image: url("../assets/graphics/web_grey-line_01.png");
+    background-image: url("../assets/graphics/web_blue-line_01.svg");
     background-position: right top;
     background-repeat: no-repeat;
-    background-size: 40%;
+    background-size: 50%;
+
     @include flex-column-center;
     text-align: center;
     min-height: 300px;
@@ -41,13 +42,13 @@
       margin-top: $gutter-sm;
     }
     @include section-padding-mq;
+
+    @media (min-width: $mq-sm) {
+      background-size: 30%;
+    }
   }
 
   .highlights {
-    /*     padding: $gutter-lg;
-    @media (min-width: $mq-sm) {
-      padding: $gutter-lg $gutter-xl $gutter-xxl $gutter-xl;
-    } */
     @include section-padding-mq;
     background-color: $clr-green;
 
