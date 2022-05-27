@@ -1,24 +1,27 @@
 @import "../base/variables";
 
+$gutter-header-lg: 65px;
+$gutter-header-md: 38px;
+
 header {
   background-color: $clr-white;
-  padding: $gutter-sm $gutter-md;
+  padding: 25px $gutter-md;
 }
 
 .top-nav ul {
   @include flex-center;
-  gap: $gutter-lg;
   margin: 0 $gutter-md;
 
   .home-link {
     @include bg-center-fullsize;
-    background-image: url("../assets/img/haku_logo.png");
-    max-width: 100%;
-    height: 100px;
+    background-image: url("../assets/img/haku_logo.svg");
     width: 80px;
+    height: 45px;
   }
 
   @media (min-width: $mq-sm) {
+    gap: $gutter-header-md;
+
     a {
       text-align: center;
       white-space: nowrap;
@@ -26,8 +29,9 @@ header {
     }
   }
   @media (min-width: $mq-md) {
+    gap: $gutter-header-lg;
     .home-link {
-      width: 100px;
+      width: 90px;
     }
     a {
       font-size: $fs-heading-xxs;
@@ -36,19 +40,20 @@ header {
 }
 
 .expandable-nav {
-  @include flex-center;
-  flex-direction: column;
+  @include flex-column-center;
   width: 100%;
-  display: none;
+  /* display: none; */
 
   @media (min-width: $mq-sm) {
-    display: flex;
+    justify-content: space-around;
     flex-direction: row;
-    gap: $gutter-lg;
-
+    gap: $gutter-header-md;
     :last-child {
       margin-left: auto;
     }
+  }
+  @media (min-width: $mq-md) {
+    gap: $gutter-header-lg;
   }
 
   .button {
