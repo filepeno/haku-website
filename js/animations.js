@@ -48,7 +48,7 @@ export function animateArrow() {
     /* rotate: myPath("angle"), */
     duration: 1000,
     direction: "reverse",
-    complete: function (anim) {
+    complete: function () {
       arrow.querySelector("#spids").classList.add("hidden");
       skewArrowYoYo(arrow.querySelector("#arrow"));
     },
