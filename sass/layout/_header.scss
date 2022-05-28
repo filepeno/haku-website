@@ -27,6 +27,9 @@ header {
       white-space: nowrap;
       font-size: $fs-body;
     }
+    .toggle-nav-btn {
+      display: none;
+    }
   }
   @media (min-width: $mq-md) {
     gap: $gutter-header-lg;
@@ -42,9 +45,10 @@ header {
 .expandable-nav {
   @include flex-column-center;
   width: 100%;
-  /* display: none; */
+  display: none;
 
   @media (min-width: $mq-sm) {
+    display: flex;
     justify-content: space-around;
     flex-direction: row;
     gap: $gutter-header-md;
