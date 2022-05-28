@@ -4,6 +4,10 @@ body {
   position: relative;
   background-color: $clr-light-bg;
   overflow-x: hidden;
+
+  &.scroll-disabled {
+    overflow-y: hidden;
+  }
 }
 
 /* .main-content {

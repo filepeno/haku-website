@@ -9,7 +9,7 @@ header {
 }
 
 .top-nav ul {
-  @include flex-center;
+  @include flex-between;
   margin: 0 $gutter-md;
 
   .home-link {
@@ -20,6 +20,7 @@ header {
   }
 
   @media (min-width: $mq-sm) {
+    @include flex-center;
     gap: $gutter-header-md;
 
     a {
@@ -47,6 +48,18 @@ header {
   width: 100%;
   display: none;
 
+  &.active {
+    display: flex;
+    position: fixed;
+    z-index: $z-index-max;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $clr-blue-ltr;
+    overflow-y: scroll;
+  }
+
   @media (min-width: $mq-sm) {
     display: flex;
     justify-content: space-around;
@@ -65,5 +78,11 @@ header {
     margin-left: auto;
     height: auto;
     padding: 0.6rem 1rem;
+  }
+}
+
+.toggle-nav-btn {
+  &.expandable-active {
+    z-index: $z-index-max;
   }
 }

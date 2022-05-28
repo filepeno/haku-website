@@ -65,6 +65,9 @@ $max-size: 700px;
 $max-size-half: calc($max-size/2);
 $max-size-double: calc($max-size * 2);
 
+//z-index
+$z-index-max: 9999;
+
 /* Mixins */
 @mixin flex-center {
   display: flex;

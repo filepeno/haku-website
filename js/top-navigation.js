@@ -23,7 +23,9 @@ function toggleBtn() {
 function toggleExpandableNav() {
   if (!navExpanded) {
     HTML.expandableNav.classList.remove("active");
+    document.querySelector("body").classList.remove("scroll-disabled");
   } else {
     HTML.expandableNav.classList.add("active");
+    document.querySelector("body").classList.add("scroll-disabled");
   }
 }
