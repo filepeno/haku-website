@@ -1,7 +1,7 @@
 import { animateArrow, animateAtom, fadeInOnScroll } from "./animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { checkIfIntheMiddleOfViewport, trackElPosition } from "./scroll";
+import { checkIfIntheMiddleOfViewport } from "./scroll";
 import { addScrollListener, removeScrollListener } from "@jamestomasino/scroll-frame";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   HTML.targetAndArrowWrapper = document.querySelector("#target-and-arrow");
   fadeInOnScroll();
-  console.log(HTML.targetAndArrowWrapper);
   initSvg();
   addScrollListener(fadeInOnScroll);
 }
@@ -37,7 +36,6 @@ async function initSvg() {
   arrowWrapper.innerHTML = arrowSvg;
   /*   animateArrow(targetWrapper, arrowWrapper); */
   if (!checkIfIntheMiddleOfViewport()) {
-    console.log("track", HTML.targetAndArrowWrapper);
     addScrollListener(checkIfIntheMiddleOfViewport);
   } else {
     animateArrow();

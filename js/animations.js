@@ -39,7 +39,6 @@ export function animateAtom(path, atom, secs, bool) {
 export function animateArrow() {
   const arrow = document.querySelector("#arrow-wrapper");
   const path = document.querySelector("#arrow-path");
-  console.log(arrow, path);
   const myPath = anime.path(path);
   let updates;
 
@@ -98,12 +97,10 @@ export function fadeInOnScroll() {
     if (elementScrolledIntoView(element)) {
       if (!element.classList.contains("active")) {
         element.classList.add("active");
-        console.log(element, "ADD active");
       }
     } else {
       if (element.classList.contains("active")) {
         element.classList.remove("active");
-        console.log(element, "REMOVE active");
       }
     }
 

@@ -8,16 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function checkIfIntheMiddleOfViewport() {
   const position = getPosition(HTML.targetAndArrowWrapper);
-  console.log("position", position);
   if (position > 0.15 && position < 0.85) {
-    console.log("in the center");
     animateArrow();
     removeScrollListener(checkIfIntheMiddleOfViewport);
   }
 }
 
 function getPosition(el) {
-  console.log(el);
   return ScrollTrigger.positionInViewport(el);
 }
 
