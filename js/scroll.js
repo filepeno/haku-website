@@ -2,7 +2,7 @@ import { removeScrollListener } from "@jamestomasino/scroll-frame";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animateArrow } from "./animations";
-import { HTML } from "./init-svg";
+import { HTML } from "../main";
 
 gsap.registerPlugin(ScrollTrigger);
 

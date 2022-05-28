@@ -1,8 +1,7 @@
 import { findAll } from "./full-search";
 import { autoSuggest } from "./autosuggest";
 import { initSearch } from "./init-search";
-
-export const HTML = {};
+import { HTML } from "../main";
 
 window.addEventListener("load", init);
 

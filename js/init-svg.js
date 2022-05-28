@@ -1,3 +1,4 @@
+import { HTML } from "../main";
 import { animateArrow, animateAtom } from "./animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -5,8 +6,6 @@ import { checkIfIntheMiddleOfViewport } from "./scroll";
 import { addScrollListener, removeScrollListener } from "@jamestomasino/scroll-frame";
 
 gsap.registerPlugin(ScrollTrigger);
-
-export const HTML = {};
 
 window.addEventListener("DOMContentLoaded", () => {
   //check if is front page
