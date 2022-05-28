@@ -39,26 +39,25 @@
       max-width: $max-size;
     }
   }
-}
+  .main-content {
+    @include section-padding-mq;
+    .subtitle {
+      text-align: center;
+      margin-bottom: $gutter-lg;
+    }
 
-.main-content {
-  @include section-padding-mq;
-  .subtitle {
-    text-align: center;
-    margin-bottom: $gutter-lg;
-  }
+    .disclaimer {
+      @include flex-center;
+      max-width: $max-size-half;
+      padding-top: $gutter-xxl;
+      margin: 0 auto;
+      flex-direction: column;
+      text-align: center;
+      gap: $gutter-sm;
 
-  .disclaimer {
-    @include flex-center;
-    max-width: $max-size-half;
-    padding-top: $gutter-xxl;
-    margin: 0 auto;
-    flex-direction: column;
-    text-align: center;
-    gap: $gutter-sm;
-
-    button {
-      margin-top: $gutter-md;
+      button {
+        margin-top: $gutter-md;
+      }
     }
   }
 }
