@@ -46,6 +46,10 @@ header {
 .expandable-nav {
   display: none;
 
+  .features-link {
+    display: none;
+  }
+
   &.active {
     @include flex-column-center;
     gap: $gutter-md;
@@ -65,8 +69,16 @@ header {
     flex-direction: row;
     align-items: center;
     gap: $gutter-header-md;
-    :last-child {
+    > :last-child {
       margin-left: auto;
+    }
+
+    > :first-child {
+      display: none;
+    }
+
+    .features-link {
+      display: block;
     }
   }
   @media (min-width: $mq-md) {
