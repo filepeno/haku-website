@@ -10,7 +10,7 @@ header {
 
 .top-nav ul {
   @include flex-between;
-  margin: 0 $gutter-md;
+  margin: 0 $gutter-xs;
 
   .home-logo {
     @include bg-center-fullsize;
@@ -45,26 +45,39 @@ header {
 }
 
 .expandable-nav {
-  display: none;
+  /*   visibility: hidden; */
+  transform: translateX(300px);
+  opacity: 0;
+  position: fixed;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  @include flex-column-center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  gap: 25px;
+  background-color: $clr-blue-ltr;
 
   .features-link {
     display: none;
   }
 
   &.active {
-    @include flex-column-center;
-    gap: 25px;
-    position: fixed;
+    transform: translateX(0);
+    opacity: 1;
     z-index: $z-index-max;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $clr-blue-ltr;
     overflow-y: scroll;
   }
 
   @media (min-width: $mq-sm) {
+    overflow-y: none;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    transform: none;
+    opacity: 1;
+    position: relative;
+    visibility: visible;
     display: flex;
     justify-content: space-around;
     flex-direction: row;

@@ -22,10 +22,27 @@ function toggleBtn() {
 
 function toggleExpandableNav() {
   if (!navExpanded) {
-    HTML.expandableNav.classList.remove("active");
-    document.querySelector("body").classList.remove("scroll-disabled");
+    closeExpandable();
+
+    /*  HTML.expandableNav.classList.remove("active"); */
   } else {
+    HTML.expandableNav.offsetHeight;
     HTML.expandableNav.classList.add("active");
     document.querySelector("body").classList.add("scroll-disabled");
   }
+}
+
+function hideExpandable(listener) {
+  HTML.expandableNav.addEventListener("transitionend", listener);
+  HTML.expandableNav.classList.remove("active");
+}
+
+function closeExpandable() {
+  const listener = () => {
+    console.log("end");
+    /*  HTML.expandableNav.classList.remove("active"); */
+    HTML.expandableNav.removeEventListener("transitionend", listener);
+  };
+  hideExpandable(listener);
+  document.querySelector("body").classList.remove("scroll-disabled");
 }
