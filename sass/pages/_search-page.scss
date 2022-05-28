@@ -42,6 +42,7 @@
 }
 
 .main-content {
+  @include section-padding-mq;
   .subtitle {
     text-align: center;
     margin-bottom: $gutter-lg;
