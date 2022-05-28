@@ -1,4 +1,4 @@
-import { animateArrow, animateAtom, fadeInOnScroll } from "./animations";
+import { animateArrow, animateAtom } from "./animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { checkIfIntheMiddleOfViewport } from "./scroll";
@@ -8,11 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const HTML = {};
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", () => {
+  //check if is front page
+  if (document.querySelector(".front-page")) {
+    init();
+  }
+});
 
 function init() {
   HTML.targetAndArrowWrapper = document.querySelector("#target-and-arrow");
-  fadeInOnScroll();
   initSvg();
 }
 
