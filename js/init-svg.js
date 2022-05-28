@@ -1,11 +1,22 @@
-import { animateAtom } from "./animations";
+import { animateArrow, animateAtom } from "./animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { checkIfInViewport } from "./scroll";
+import { checkIfIntheMiddleOfViewport, fadeInOnScroll, trackElPosition } from "./scroll";
+import { addScrollListener, removeScrollListener } from "@jamestomasino/scroll-frame";
 
 gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("DOMContentLoaded", initSvg);
+export const HTML = {};
+
+window.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  HTML.targetAndArrowWrapper = document.querySelector("#target-and-arrow");
+  fadeInOnScroll();
+  console.log(HTML.targetAndArrowWrapper);
+  initSvg();
+  addScrollListener(fadeInOnScroll);
+}
 
 async function initSvg() {
   const molekyl = await fetch("assets/graphics/molekyl.svg");
@@ -21,12 +32,15 @@ async function initSvg() {
 
   const targetWrapper = document.querySelector("#target-wrapper");
   const arrowWrapper = document.querySelector("#arrow-wrapper");
+
   targetWrapper.innerHTML = arrowTargetPathSvg;
   arrowWrapper.innerHTML = arrowSvg;
   /*   animateArrow(targetWrapper, arrowWrapper); */
-  if (!checkIfInViewport()) {
-    console.log("track");
-    ScrollTrigger.addEventListener("scrollStart", checkIfInViewport);
+  if (!checkIfIntheMiddleOfViewport()) {
+    console.log("track", HTML.targetAndArrowWrapper);
+    addScrollListener(checkIfIntheMiddleOfViewport);
+  } else {
+    animateArrow();
   }
 }
 
