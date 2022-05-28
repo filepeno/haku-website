@@ -39,8 +39,6 @@ function hideExpandable(listener) {
 
 function closeExpandable() {
   const listener = () => {
-    console.log("end");
-    /*  HTML.expandableNav.classList.remove("active"); */
     HTML.expandableNav.removeEventListener("transitionend", listener);
   };
   hideExpandable(listener);
