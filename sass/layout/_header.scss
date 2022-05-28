@@ -1,7 +1,7 @@
 @import "../base/variables";
 
-$gutter-header-lg: 65px;
-$gutter-header-md: 38px;
+$gutter-header-lg: 80px;
+$gutter-header-md: 45px;
 
 header {
   background-color: $clr-white;
@@ -44,12 +44,11 @@ header {
 }
 
 .expandable-nav {
-  @include flex-column-center;
-  width: 100%;
   display: none;
 
   &.active {
-    display: flex;
+    @include flex-column-center;
+    gap: $gutter-md;
     position: fixed;
     z-index: $z-index-max;
     top: 0;
@@ -64,6 +63,7 @@ header {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    align-items: center;
     gap: $gutter-header-md;
     :last-child {
       margin-left: auto;
@@ -77,7 +77,7 @@ header {
     font-size: $fs-sm;
     margin-left: auto;
     height: auto;
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
