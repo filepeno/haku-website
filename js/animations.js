@@ -39,15 +39,23 @@ export function animateArrow() {
   const arrow = document.querySelector("#arrow-wrapper");
   const path = document.querySelector("#arrow-path");
   console.log(arrow, path);
-  var myPath = anime.path(path);
-  arrow.classList.remove("hidden");
+  const myPath = anime.path(path);
+  let updates;
+
   anime({
     targets: arrow,
     translateX: myPath("x"),
     translateY: myPath("y"),
     /* rotate: myPath("angle"), */
-    duration: 1000,
+    duration: 700,
     direction: "reverse",
+    ease: "none",
+    update: function (anim) {
+      updates++;
+      if (Math.round(anim.progress) < 30) {
+        arrow.classList.remove("invisible");
+      }
+    },
     complete: function () {
       arrow.querySelector("#spids").classList.add("hidden");
       skewArrowYoYo(arrow.querySelector("#arrow"));

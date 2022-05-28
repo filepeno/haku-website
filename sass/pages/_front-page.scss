@@ -195,10 +195,15 @@
     }
 
     #arrow-wrapper {
+      opacity: 1;
       position: absolute;
       width: 128px;
       top: -81px;
       left: -5px;
+      transition: opacity 0.2s;
+      &.invisible {
+        opacity: 0;
+      }
     }
   }
 }

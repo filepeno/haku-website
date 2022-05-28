@@ -50,10 +50,10 @@ export function fadeInOnScroll() {
       }
     }
 
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      console.log(element);
+    /*     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      //console.log(element);
       element.classList.add("active");
-    }
+    } */
   });
 }
 
