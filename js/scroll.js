@@ -30,31 +30,11 @@ export function trackElPosition() {
   }
 }
 
-export function fadeInOnScroll() {
-  const allEls = document.querySelectorAll(".fade");
-
-  allEls.forEach((element) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 10;
-
-    if (elementTop < windowHeight - elementVisible) {
-      if (!element.classList.contains("active")) {
-        element.classList.add("active");
-        console.log(element, "ADD active");
-      }
-    } else {
-      if (element.classList.contains("active")) {
-        element.classList.remove("active");
-        console.log(element, "REMOVE active");
-      }
-    }
-
-    /*     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      //console.log(element);
-      element.classList.add("active");
-    } */
-  });
+export function elementScrolledIntoView(element) {
+  const windowHeight = window.innerHeight;
+  const elementTop = element.getBoundingClientRect().top;
+  const elementVisible = 50;
+  if (elementTop < windowHeight - elementVisible) {
+    return true;
+  }
 }
-
-function trackScroll() {}

@@ -1,7 +1,7 @@
-import { animateArrow, animateAtom } from "./animations";
+import { animateArrow, animateAtom, fadeInOnScroll } from "./animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { checkIfIntheMiddleOfViewport, fadeInOnScroll, trackElPosition } from "./scroll";
+import { checkIfIntheMiddleOfViewport, trackElPosition } from "./scroll";
 import { addScrollListener, removeScrollListener } from "@jamestomasino/scroll-frame";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import anime from "animejs/lib/anime.es.js";
+import { elementScrolledIntoView } from "./scroll";
 
 export function rotateMolekyl() {
   const molekyl = document.querySelector("#molekyl");
@@ -88,4 +89,27 @@ function skewArrowStop(arrow, i) {
       skewArrowStop(arrow, i--);
     }
   }
+}
+
+export function fadeInOnScroll() {
+  const allEls = document.querySelectorAll(".fade");
+
+  allEls.forEach((element) => {
+    if (elementScrolledIntoView(element)) {
+      if (!element.classList.contains("active")) {
+        element.classList.add("active");
+        console.log(element, "ADD active");
+      }
+    } else {
+      if (element.classList.contains("active")) {
+        element.classList.remove("active");
+        console.log(element, "REMOVE active");
+      }
+    }
+
+    /*     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //console.log(element);
+        element.classList.add("active");
+      } */
+  });
 }
