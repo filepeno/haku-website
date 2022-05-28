@@ -30,7 +30,7 @@ export function trackElPosition() {
 export function elementScrolledIntoView(element) {
   const windowHeight = window.innerHeight;
   const elementTop = element.getBoundingClientRect().top;
-  const elementVisible = 50;
+  const elementVisible = 170;
   if (elementTop < windowHeight - elementVisible) {
     return true;
   }

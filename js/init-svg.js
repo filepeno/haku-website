@@ -14,7 +14,6 @@ function init() {
   HTML.targetAndArrowWrapper = document.querySelector("#target-and-arrow");
   fadeInOnScroll();
   initSvg();
-  addScrollListener(fadeInOnScroll);
 }
 
 async function initSvg() {
