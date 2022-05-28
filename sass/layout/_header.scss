@@ -5,7 +5,7 @@ $gutter-header-md: 45px;
 
 header {
   background-color: $clr-white;
-  padding: 25px $gutter-md;
+  padding: 12px $gutter-md;
 }
 
 .top-nav ul {
@@ -20,6 +20,7 @@ header {
   }
 
   @media (min-width: $mq-sm) {
+    padding: 25px $gutter-md;
     @include flex-center;
     gap: $gutter-header-md;
 
@@ -52,7 +53,7 @@ header {
 
   &.active {
     @include flex-column-center;
-    gap: $gutter-md;
+    gap: 25px;
     position: fixed;
     z-index: $z-index-max;
     top: 0;

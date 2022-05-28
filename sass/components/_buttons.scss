@@ -74,3 +74,16 @@ button {
     opacity: 0.5;
   }
 }
+
+.toggle-nav-btn {
+  position: relative;
+  padding: $gutter-xs;
+  &:before {
+    content: "☰";
+    display: block;
+    font-size: 25px;
+  }
+  &.expandable-active:before {
+    content: "✕";
+  }
+}
