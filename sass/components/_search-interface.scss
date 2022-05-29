@@ -1,7 +1,8 @@
 @import "../base/variables";
 @import "../base/typography";
 
-$radius: 20px;
+$height: 2.8rem;
+$radius: calc($height / 2);
 $shadow: 0 4px 4px #654cff;
 
 .search-interface {
@@ -23,9 +24,22 @@ $shadow: 0 4px 4px #654cff;
       @include h2-typography;
     }
   }
+  .input-wrapper {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      color: $clr-blue;
+      top: 0.5rem;
+      left: 0.5rem;
+      height: calc($height - 15px);
+      width: calc($height - 15px);
+    }
+  }
 }
 
 #search-input {
+  height: 2.8rem;
   border-radius: $radius;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -34,7 +48,7 @@ $shadow: 0 4px 4px #654cff;
   font-weight: $fw-regular;
   background-color: $clr-light-bg;
   @include box-shadow-transition;
-  padding-left: $gutter-md;
+  padding-left: $height;
 
   &:focus {
     background-color: $clr-white;

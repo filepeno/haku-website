@@ -48,11 +48,15 @@
                         <label for="search-input">
                             <span>Searching on</span>
                             <span class="site-to-search"> </span>
-                            <span class="icon"></span>
+
 
                         </label>
-                        <input type="search" id="search-input" name="search-input" placeholder="Search for"
-                            onfocus="this.value=''">
+                        <div class="input-wrapper">
+                            <span class="iconify icon" data-icon="radix-icons:magnifying-glass"></span>
+                            <input type="search" id="search-input" name="search-input" placeholder="Search for"
+                                onfocus="this.value=''">
+                        </div>
+
                         <div class="suggestions-wrapper hidden">
                             <ul>
                                 <!-- suggestions come here -->
@@ -155,6 +159,7 @@
     </template>
 
     <script type="module" src="/main.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script type="module" src="/js/search-interface.js"></script>
 </body>
 
