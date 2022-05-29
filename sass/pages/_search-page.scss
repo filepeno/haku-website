@@ -40,29 +40,15 @@
     }
   }
   .main-content {
-    @include section-padding-mq;
     .subtitle {
       text-align: center;
       margin-bottom: $gutter-lg;
-    }
-
-    .disclaimer {
-      @include flex-center;
-      max-width: $max-size-half;
-      padding-top: $gutter-xxl;
-      margin: 0 auto;
-      flex-direction: column;
-      text-align: center;
-      gap: $gutter-sm;
-
-      button {
-        margin-top: $gutter-md;
-      }
     }
   }
 }
 
 .results-wrapper {
+  @include section-padding-mq;
   max-width: $max-size;
   @include center;
 }

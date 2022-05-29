@@ -1,0 +1,16 @@
+@import "../base/variables";
+@import "../base/typography";
+
+.bottom-cta-wrapper {
+  @include section-padding-mq;
+  @include flex-center;
+
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: center;
+  gap: $gutter-sm;
+
+  button {
+    margin-top: $gutter-md;
+  }
+}
