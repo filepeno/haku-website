@@ -3,11 +3,9 @@
   transform: translateY(50px);
   opacity: 0;
 
-  background: transparent;
   &.active {
     transition: 1s all ease;
     transform: translateY(0);
     opacity: 1;
-    background: transparent;
   }
 }
