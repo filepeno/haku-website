@@ -19,32 +19,56 @@
       max-width: 600px;
     }
   }
-
-  /*   .main-content > * {
-    padding: $gutter-lg;
-    @media (min-width: $mq-sm) {
-      padding: $gutter-lg $gutter-md;
-    }
-  } */
-
-  .intro {
+  .intro-wrapper {
     background-image: url("../assets/graphics/web_blue-line_01.svg");
     background-position: right top;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 250px;
+    @media (min-width: $mq-xs) {
+      background-size: 300px;
+    }
+    @media (min-width: $mq-sm) {
+      background-size: 400px;
+    }
+    @media (min-width: $mq-xxl) {
+      background-size: 500px;
+    }
+  }
 
+  .intro {
     @include flex-column-center;
+    gap: $gutter-lg $gutter-xxl;
+    @include center;
+    max-width: $max-size-double;
     text-align: center;
-    min-height: 300px;
+    @include section-padding-mq;
+
     p {
       @include center;
       max-width: 500px;
       margin-top: $gutter-sm;
     }
-    @include section-padding-mq;
 
-    @media (min-width: $mq-sm) {
-      background-size: 30%;
+    @media (min-width: $mq-md) {
+      flex-direction: row;
+    }
+
+    .links {
+      margin-top: $gutter-lg;
+      @include flex-column-center;
+      gap: $gutter-md $gutter-lg;
+      @media (min-width: $mq-sm) {
+        flex-direction: row;
+      }
+      > * {
+        @include flex-column-center;
+      }
+      .elastic {
+        background-image: url("../assets/img/elastic-logo.svg");
+      }
+      .knowit {
+        background-image: url("../assets/img/knowit.png");
+      }
     }
   }
 
@@ -97,7 +121,6 @@
 
   .icon {
     background-image: url("../assets/icons/lightning.png");
-    @include bg-center-fullsize;
   }
 }
 
