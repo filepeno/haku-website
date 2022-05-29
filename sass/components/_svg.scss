@@ -1,0 +1,7 @@
+@import "../base/variables";
+.home-logo {
+  @include bg-center-fullsize;
+  background-image: url("../assets/img/haku_logo.svg");
+  width: 80px;
+  height: 45px;
+}

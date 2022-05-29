@@ -12,13 +12,6 @@ header {
   @include flex-between;
   margin: 0 $gutter-xs;
 
-  .home-logo {
-    @include bg-center-fullsize;
-    background-image: url("../assets/img/haku_logo.svg");
-    width: 80px;
-    height: 45px;
-  }
-
   @media (min-width: $mq-sm) {
     padding: 25px $gutter-md;
     @include flex-center;
@@ -35,7 +28,7 @@ header {
   }
   @media (min-width: $mq-md) {
     gap: $gutter-header-lg;
-    .home-link {
+    .home-logo {
       width: 90px;
     }
     a {
