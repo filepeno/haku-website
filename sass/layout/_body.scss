@@ -10,6 +10,10 @@ body {
   }
 }
 
+.blue-bg {
+  background-color: $clr-blue-ltr;
+}
+
 /* .main-content {
   margin: $gutter-sm $gutter-md;
   @media (min-width: $mq-sm) {
