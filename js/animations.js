@@ -1,6 +1,8 @@
 import { gsap } from "gsap";
 import anime from "animejs/lib/anime.es.js";
 import { elementScrolledIntoView } from "./scroll";
+import { closeExpandable } from "./top-navigation";
+import { getInnerWidth } from "./resize";
 
 export function rotateMolekyl() {
   const molekyl = document.querySelector("#molekyl");
@@ -109,4 +111,29 @@ export function fadeInOnScroll() {
         element.classList.add("active");
       } */
   });
+}
+
+export function moveNavIn(el) {
+  console.log(el);
+  console.log(window.innerWidth);
+  gsap.fromTo(
+    el,
+    { x: getInnerWidth() },
+    {
+      x: 0,
+      duration: 0.3,
+    }
+  );
+}
+export function moveNavOut(el) {
+  console.log(el, "out");
+  gsap.fromTo(
+    el,
+    { x: 0 },
+    {
+      x: getInnerWidth(),
+      duration: 0.3,
+      onComplete: closeExpandable,
+    }
+  );
 }

@@ -1,4 +1,5 @@
 import { HTML } from "../main";
+import { moveNavIn, moveNavOut } from "./animations";
 
 let navExpanded = false;
 
@@ -12,35 +13,30 @@ function toggleBtn() {
   console.log("click");
   if (!navExpanded) {
     navExpanded = true;
-    HTML.toggleNavBtn.classList.add("expandable-active");
   } else {
     navExpanded = false;
-    HTML.toggleNavBtn.classList.remove("expandable-active");
   }
   toggleExpandableNav();
 }
 
 function toggleExpandableNav() {
   if (!navExpanded) {
-    closeExpandable();
-
-    /*  HTML.expandableNav.classList.remove("active"); */
+    moveNavOut(HTML.expandableNav);
   } else {
-    HTML.expandableNav.offsetHeight;
     HTML.expandableNav.classList.add("active");
+    HTML.toggleNavBtn.classList.add("expandable-active");
+    moveNavIn(HTML.expandableNav);
     document.querySelector("body").classList.add("scroll-disabled");
   }
 }
 
-function hideExpandable(listener) {
-  HTML.expandableNav.addEventListener("transitionend", listener);
-  HTML.expandableNav.classList.remove("active");
-}
-
-function closeExpandable() {
-  const listener = () => {
-    HTML.expandableNav.removeEventListener("transitionend", listener);
-  };
-  hideExpandable(listener);
-  document.querySelector("body").classList.remove("scroll-disabled");
+export function closeExpandable() {
+  if (HTML.expandableNav.classList.contains("active")) {
+    console.log("close");
+    navExpanded = false;
+    HTML.expandableNav.classList.remove("active");
+    HTML.toggleNavBtn.classList.remove("expandable-active");
+    HTML.expandableNav.style.transform = "none";
+    document.querySelector("body").classList.remove("scroll-disabled");
+  }
 }
