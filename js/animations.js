@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import anime from "animejs/lib/anime.es.js";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { elementScrolledIntoView } from "./scroll";
 import { closeExpandable } from "./top-navigation";
 import { getInnerWidth } from "./resize";
@@ -101,8 +102,10 @@ export function fadeInOnScroll() {
         element.classList.add("active");
       }
     } else {
-      if (element.classList.contains("active")) {
-        element.classList.remove("active");
+      if (!ScrollTrigger.isInViewport(element)) {
+        if (element.classList.contains("active")) {
+          element.classList.remove("active");
+        }
       }
     }
 
