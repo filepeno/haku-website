@@ -2,17 +2,61 @@
 
 footer {
   position: relative;
-
   background-color: $clr-blue;
-  min-height: 400px;
+  /*   min-height: 400px; */
+
+  h4 {
+    margin-bottom: 12px;
+  }
 
   .content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $gutter-lg;
+    justify-content: left;
     @include section-padding-mq;
     @include center;
     max-width: $max-size-double;
+    @media (min-width: $mq-xs) {
+      display: grid;
+      grid-template-columns: 1fr 120px 150px;
+    }
+    @media (min-width: $mq-sm) {
+      gap: $gutter-lg;
+      display: grid;
+      grid-template-columns: 1fr 150px 200px;
+    }
+    @media (min-width: $mq-md) {
+      grid-template-columns: 1fr 150px 250px;
+    }
+
+    nav ul {
+      @include flex-column;
+      gap: $gutter-sm;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-column: auto;
+    gap: $gutter-md;
+    @media (min-width: $mq-xs) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: $mq-sm) {
+      grid-template-columns: 1fr 1fr;
+      gap: $gutter-lg;
+    }
+  }
+
+  .contact-knowit {
+    @include flex-column;
+    gap: $gutter-lg;
   }
 
   &:before {
+    z-index: 0;
     content: "";
     position: absolute;
     width: 100%;
@@ -35,5 +79,10 @@ footer {
 
   .home-logo {
     background-image: url("../assets/img/haku_logo_white.svg");
+  }
+
+  address {
+    @include flex-column;
+    gap: $gutter-sm;
   }
 }

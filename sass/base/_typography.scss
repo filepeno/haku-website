@@ -82,6 +82,12 @@ h3 {
   @include h3-typography;
 }
 
+h4 {
+  font-family: $ff-main;
+  font-weight: $fw-bold;
+  color: $clr-white;
+}
+
 p {
   @include main-typography;
   text-rendering: optimizeLegibility;
@@ -92,6 +98,7 @@ p {
 
 a {
   @include link-typography;
+  font-style: normal;
 }
 
 ul,

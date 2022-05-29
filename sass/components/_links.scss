@@ -27,3 +27,11 @@ header a {
     color: $clr-contrast-lt;
   }
 }
+
+.footer-link {
+  @include main-typography;
+  color: $clr-white;
+  &:hover {
+    color: $clr-contrast-ltr;
+  }
+}
