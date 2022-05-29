@@ -196,36 +196,12 @@
   }
 }
 
-.graphics {
-  svg {
-    max-width: 100%;
-    width: 150px;
-    @media (min-width: $mq-xs) {
-      width: 200px;
-    }
-    @media (min-width: $mq-md) {
-      width: 300px;
-    }
-  }
-  &#target-and-arrow {
-    position: relative;
-    width: 240px;
-
-    #target-wrapper svg {
-      width: 750px;
-      max-width: none;
-    }
-
-    #arrow-wrapper {
-      opacity: 1;
-      position: absolute;
-      width: 128px;
-      top: -81px;
-      left: -5px;
-      transition: opacity 0.2s;
-      &.invisible {
-        opacity: 0;
-      }
-    }
+.brands {
+  text-align: center;
+  @include section-padding-mq;
+  ul {
+    margin-top: $gutter-xxl;
+    @include flex-center;
+    gap: $gutter-xxl;
   }
 }
