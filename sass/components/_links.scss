@@ -14,6 +14,7 @@ header a {
   font-weight: $fw-regular;
   white-space: normal;
   text-underline-offset: 4px;
+  width: fit-content;
 
   &:hover {
     text-decoration: underline;
