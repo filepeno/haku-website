@@ -2,6 +2,8 @@
 @import "../base/typography";
 
 .hero {
+  position: relative;
+  z-index: 1;
   @include flex-center;
   @include bg-center-cover;
   height: 80vh;
