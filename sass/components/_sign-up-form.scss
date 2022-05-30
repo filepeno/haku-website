@@ -45,16 +45,15 @@
       margin-top: $gutter-sm;
     }
   }
-}
+  .input-wrapper {
+    width: 100%;
+    /*   @include flex-column; */
+    input:focus {
+      border: 2px solid $clr-contrast-lt;
+    }
 
-.input-wrapper {
-  width: 100%;
-  /*   @include flex-column; */
-  input:focus {
-    border: 2px solid $clr-contrast-lt;
-  }
-
-  &:focus-within label {
-    font-weight: $fw-bold;
+    &:focus-within label {
+      font-weight: $fw-bold;
+    }
   }
 }
