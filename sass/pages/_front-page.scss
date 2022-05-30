@@ -198,9 +198,22 @@
 .brands {
   text-align: center;
   @include section-padding-mq;
-  ul {
-    margin-top: $gutter-xxl;
-    @include flex-center;
-    gap: $gutter-xxl;
+  .list {
+    max-width: 1400px;
+    @include center;
+    margin-top: $gutter-xl;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $gutter-xl;
+    @media (min-width: $mq-xs) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: $mq-md) {
+      margin-top: $gutter-xxl;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    > * {
+      justify-self: center;
+    }
   }
 }
