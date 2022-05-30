@@ -69,11 +69,15 @@ $shadow: 0 4px 4px #654cff;
 }
 
 .result-feedback {
+  text-align: center;
   margin-top: $gutter-xs;
   font-size: $fs-sm;
   [data-query],
   [data-hits] {
     font-weight: $fw-bold;
+  }
+  [data-query] {
+    word-break: break-all;
   }
 }
 
