@@ -10,136 +10,138 @@
 </head>
 
 <body class="search-interface-page">
-    <header>
-        <nav class="top-nav">
-            <ul>
-
-                <li><a aria-label="Home" href="/index.html">
-                        <div class="home-logo"></div>
-                    </a></li>
-
-                <div class="expandable-nav">
-                    <li>
-                        <a href="/index.html">
-                            <div class="home-logo"></div>
-                        </a>
-                    </li>
-                    <li class="features-link"><a href="/index#features">Features</a></li>
-                    <li><a href="/search-page.html">Try Haku</a></li>
-                    <li><a href="">Pricing</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a class="glass button" href="/sign-up.html">Sign-up for trial</a></li>
-                </div>
-                <button class="toggle-nav-btn" aria-label="Toggle navigation"></button>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="hero-content fade">
-                <h1 class="title">Try Haku</h1>
-                <form class="search-interface" action="" autocomplete="off">
-                    <label class="switch">
-                        <span class="label-text">Switch to <em>your site</em></span>
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                    <div class="search-wrapper">
-                        <label for="search-input">
-                            <span>Searching on</span>
-                            <span class="site-to-search"> </span>
-
-
-                        </label>
-                        <div class="input-wrapper">
-                            <span class="iconify icon" data-icon="radix-icons:magnifying-glass"></span>
-                            <input type="search" id="search-input" name="search-input" placeholder="Search for articles"
-                                maxlength="100" onfocus="this.value=''">
-                        </div>
-
-                        <div class="suggestions-wrapper hidden">
-                            <ul>
-                                <!-- suggestions come here -->
-                            </ul>
-                        </div>
-                    </div>
-                </form>
-                <p class="result-feedback hidden">Your search on <span data-query>query</span> returned <span
-                        data-hits>1</span> result(s).</p>
-            </div>
-        </section>
-        <section class="main-content">
-            <div class="results-wrapper hidden">
-                <h2 class="subtitle">Search results</h2>
-
-                <p class="result-scope">Showing <span data-from>1</span> - <span data-to>5</span> results:
-                </p>
-                <div class="results-area">
-                    <!-- results go here -->
-
-                </div>
-                <div id="tui-pagination-container" class="tui-pagination">
-                    <!-- pages go here -->
-
-                </div>
-            </div>
-            <div class="bottom-cta-wrapper">
-                <div>
-                    <p>Default search works on knowit.dk.
-                    <p>Sign up for a <em>free trial</em> to be able to search on your
-                        existing website.</p>
-                    </p>
-                </div>
-                <a href="/sign-up.html" class="button glass body-btn">Sign-up for a free demo</a>
-                <p>Or</p>
-                <a class="text-link" href="#">Go back to top</a>
-            </div>
-
-        </section>
-    </main>
-    <footer>
-        <div class="content-wrapper">
-            <div>
-                <div class="home-logo"></div>
-            </div>
-
-            <nav class="bottom-nav">
+    <div class="site-wrapper">
+        <header>
+            <nav class="top-nav">
                 <ul>
-                    <li>
-                        <a class="footer-link" href="/index.html#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="/search-page.html">Try Haku</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="">Pricing</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="">About us</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="/sign-up.html">Sign up</a>
-                    </li>
+
+                    <li><a aria-label="Home" href="/index.html">
+                            <div class="home-logo"></div>
+                        </a></li>
+
+                    <div class="expandable-nav">
+                        <li>
+                            <a href="/index.html">
+                                <div class="home-logo"></div>
+                            </a>
+                        </li>
+                        <li class="features-link"><a href="/index#features">Features</a></li>
+                        <li><a href="/search-page.html">Try Haku</a></li>
+                        <li><a href="">Pricing</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a class="glass button" href="/sign-up.html">Sign-up for trial</a></li>
+                    </div>
+                    <button class="toggle-nav-btn" aria-label="Toggle navigation"></button>
                 </ul>
             </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="hero-content fade">
+                    <h1 class="title">Try Haku</h1>
+                    <form class="search-interface" action="" autocomplete="off">
+                        <label class="switch">
+                            <span class="label-text">Switch to <em>your site</em></span>
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <div class="search-wrapper">
+                            <label for="search-input">
+                                <span>Searching on</span>
+                                <span class="site-to-search"> </span>
 
-            <div class="contact-knowit">
-                <section class="contact">
-                    <h4>Contact</h4>
-                    <address>
-                        <a class="footer-link" href="mailto:haku@knowit.dk">haku@knowit.dk</a>
-                        <a class="footer-link" href="tel:">+45 00 00 00 00</a>
-                    </address>
-                </section>
 
-                <section class="knowit">
-                    <h4>Visit our site</h4>
-                    <a class="footer-link" href="https://www.knowit.dk/">www.knowit.dk</a>
-                </section>
+                            </label>
+                            <div class="input-wrapper">
+                                <span class="iconify icon" data-icon="radix-icons:magnifying-glass"></span>
+                                <input type="search" id="search-input" name="search-input"
+                                    placeholder="Search for articles" maxlength="100" onfocus="this.value=''">
+                            </div>
+
+                            <div class="suggestions-wrapper hidden">
+                                <ul>
+                                    <!-- suggestions come here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="result-feedback hidden">Your search on <span data-query>query</span> returned <span
+                            data-hits>1</span> result(s).</p>
+                </div>
+            </section>
+            <section class="main-content">
+                <div class="results-wrapper hidden">
+                    <h2 class="subtitle">Search results</h2>
+
+                    <p class="result-scope">Showing <span data-from>1</span> - <span data-to>5</span> results:
+                    </p>
+                    <div class="results-area">
+                        <!-- results go here -->
+
+                    </div>
+                    <div id="tui-pagination-container" class="tui-pagination">
+                        <!-- pages go here -->
+
+                    </div>
+                </div>
+                <div class="bottom-cta-wrapper">
+                    <div>
+                        <p>Default search works on knowit.dk.
+                        <p>Sign up for a <em>free trial</em> to be able to search on your
+                            existing website.</p>
+                        </p>
+                    </div>
+                    <a href="/sign-up.html" class="button glass body-btn">Sign-up for a free demo</a>
+                    <p>Or</p>
+                    <a class="text-link" href="#">Go back to top</a>
+                </div>
+
+            </section>
+        </main>
+        <footer>
+            <div class="content-wrapper">
+                <div>
+                    <div class="home-logo"></div>
+                </div>
+
+                <nav class="bottom-nav">
+                    <ul>
+                        <li>
+                            <a class="footer-link" href="/index.html#features">Features</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="/search-page.html">Try Haku</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="">Pricing</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="">About us</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="/sign-up.html">Sign up</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="contact-knowit">
+                    <section class="contact">
+                        <h4>Contact</h4>
+                        <address>
+                            <a class="footer-link" href="mailto:haku@knowit.dk">haku@knowit.dk</a>
+                            <a class="footer-link" href="tel:">+45 00 00 00 00</a>
+                        </address>
+                    </section>
+
+                    <section class="knowit">
+                        <h4>Visit our site</h4>
+                        <a class="footer-link" href="https://www.knowit.dk/">www.knowit.dk</a>
+                    </section>
+                </div>
+
             </div>
-
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <template id="result-template">
         <a href="" target="_blank">
