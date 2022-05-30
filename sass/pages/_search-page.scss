@@ -29,6 +29,10 @@
     border: 1px solid rgba(23, 38, 73, 0.125);
     box-shadow: 0 9px 10px rgb(27 27 27 / 39%);
 
+    .title {
+      margin-bottom: 0;
+    }
+
     > *,
     label span {
       color: $clr-white;
