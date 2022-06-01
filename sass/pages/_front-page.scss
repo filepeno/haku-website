@@ -125,6 +125,7 @@
 
 .features-wrapper {
   @include section-padding-mq;
+  margin-bottom: $gutter-xxl;
 }
 
 .features {
@@ -178,12 +179,13 @@
     }
   }
 }
+
 .case {
-  /*   height: 500px; */
   max-width: $max-size-double;
   @include center;
   display: grid;
   grid-template-rows: 400px 1fr;
+
   .text {
     @include section-padding-mq;
     padding-top: $gutter-md;
