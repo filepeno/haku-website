@@ -85,7 +85,6 @@ export function displaySuggestions() {
 }
 
 function checkIfSuggestion(e) {
-  console.log(e.target);
   if (!e.target.classList.contains(".suggestion")) {
     hideSuggestions();
   }

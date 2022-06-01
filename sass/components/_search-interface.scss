@@ -95,6 +95,9 @@ $shadow: 0 4px 4px #654cff;
 
   ul {
     @include flex-column;
-    gap: $gutter-sm;
+    gap: 14px;
+    li {
+      line-height: normal;
+    }
   }
 }
