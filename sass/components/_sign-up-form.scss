@@ -9,13 +9,13 @@
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  padding: $gutter-lg;
+  padding: 25px;
   max-width: 450px;
   transition: all 0.2s ease-out;
 
-  /*   @media (min-width: $mq-xs) {
+  @media (min-width: $mq-xs) {
     padding: $gutter-lg;
-  } */
+  }
   @media (min-width: $mq-sm) {
     padding: $gutter-lg $gutter-xl;
   }

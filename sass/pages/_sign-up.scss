@@ -33,11 +33,14 @@
     }
   }
   .content {
-    max-width: 700px;
+    max-width: $max-size;
     .sign-up-steps {
       padding: $gutter-md;
       @include center;
       @media (max-width: $mq-xs-down) {
+        max-width: 260px;
+      }
+      @media (min-width: $mq-xxs) and (max-width: $mq-xs-down) {
         display: none;
       }
     }
