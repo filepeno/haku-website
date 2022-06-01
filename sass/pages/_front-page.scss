@@ -177,19 +177,50 @@
       }
     }
   }
-  .case {
-    padding: $gutter-lg;
-
-    .logo {
-      width: 100px;
-      height: 50px;
-      background-image: url("../assets/img/smk-logo.png");
+}
+.case {
+  /*   height: 500px; */
+  max-width: $max-size-double;
+  @include center;
+  display: grid;
+  grid-template-rows: 400px 1fr;
+  .text {
+    @include section-padding-mq;
+    padding-top: $gutter-md;
+    grid-row: 2 / 3;
+    p {
+      margin-bottom: $gutter-md;
     }
-    @media (min-width: $mq-md) {
-      padding: $gutter-xl;
-      .logo {
-        width: 150px;
-        height: 100px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 50px;
+    background-image: url("../assets/img/smk-logo.png");
+  }
+  .bg-img {
+    height: 100%;
+    width: 100%;
+    background-image: url("/assets/img/smk-open_case_01-lg.png");
+    @include bg-center-cover;
+  }
+  @media (min-width: $mq-sm) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 3fr;
+    /*  padding: $gutter-xl; */
+    .bg-img {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .logo {
+      width: 150px;
+      height: 100px;
+    }
+    .text {
+      justify-self: center;
+      padding: $gutter-lg;
+      max-width: $max-size;
+      @media (min-width: $mq-md) {
+        padding-bottom: $gutter-xl;
       }
     }
   }
