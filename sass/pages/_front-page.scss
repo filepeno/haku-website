@@ -6,7 +6,7 @@
     height: 100vh;
     background-image: url("../assets/img/glass-wall_crop_md.png");
     @media (min-width: $mq-sm) {
-      background-image: url("../assets/img/glass-wall_crop_lg.png");
+      background-image: url("../assets/img/glass-wall_crop_lg.webp");
     }
 
     .button {
@@ -17,6 +17,9 @@
   .hero-content {
     @media (min-width: $mq-xs) {
       max-width: 500px;
+      .subtitle {
+        max-width: $max-size-half;
+      }
     }
     @media (min-width: $mq-md) {
       max-width: 600px;
