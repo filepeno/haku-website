@@ -4,9 +4,9 @@
 .front-page {
   .hero {
     height: 100vh;
-    background-image: url("../assets/img/glass-wall_crop_md.webp");
+    background-image: url("../assets/img/glass-wall_crop_md.png");
     @media (min-width: $mq-sm) {
-      background-image: url("../assets/img/glass-wall_crop_lg.webp");
+      background-image: url("../assets/img/glass-wall_crop_lg.png");
     }
 
     .button {
