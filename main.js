@@ -10,4 +10,5 @@ export const HTML = {};
 initHeader();
 calculateHeroHeight();
 trackScreenResize();
+fadeInOnScroll();
 addScrollListener(fadeInOnScroll);
