@@ -203,7 +203,7 @@
   .bg-img {
     height: 100%;
     width: 100%;
-    background-image: url("/assets/img/smk-open_case_01-lg.png");
+    background-image: url("../assets/img/smk-open_case_01-lg.png");
     @include bg-center-cover;
   }
   @media (min-width: $mq-sm) {
