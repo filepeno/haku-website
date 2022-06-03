@@ -136,13 +136,6 @@
   @include flex-column-center;
   gap: $gutter-xxxxl;
 
-  /*     @media (min-width: $mq-md) {
-    gap: $gutter-xxxl;
-  } */
-  .icon {
-    width: 30px;
-    height: 30px;
-  }
   .text {
     text-align: start;
   }
@@ -171,13 +164,18 @@
       gap: $gutter-sm;
     }
 
-    figure {
-      max-width: 150px;
-      @media (min-width: $mq-xs) {
-        max-width: 200px;
-      }
+    .danish-search {
+      max-width: 300px;
+
       @media (min-width: $mq-md) {
-        max-width: 300px;
+        max-width: 350px;
+      }
+    }
+    .cost {
+      max-width: 300px;
+
+      @media (min-width: $mq-md) {
+        width: 280px;
       }
     }
   }
